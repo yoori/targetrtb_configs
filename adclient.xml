@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colo:colocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:cfg="http://www.foros.com/adclient/cms/cfg"
+  xmlns:colo="http://www.foros.com/cms/colocation"
+  xsi:schemaLocation="http://www.foros.com/cms/colocation /opt/cms/share/model/colocation.xsd"
+  name="targetrtb"
+  description="">
+  <application id="87" descriptor="AdClient-3.7.0.24" name="AdClient" description="">
+    <configuration><cfg:AdClient>
+        <foros-pagesense>
+          <AdServerDomain>ad.targetrtb.com</AdServerDomain>
+          <AdImageDomain>media.targetrtb.com</AdImageDomain>
+          <AdServerDomainCT>ad.targetrtb.com</AdServerDomainCT>
+          <FullText>true</FullText>
+          <Phingerprinting>false</Phingerprinting>
+          <AIMService>/services/ftype?op=frame</AIMService>
+          <CookieMapping>true</CookieMapping>
+          <ServerLogging>true</ServerLogging>
+        </foros-pagesense>
+        <foros-creatives>
+          <PRP>true</PRP>
+          <Phingerprinting>false</Phingerprinting>
+          <AIMService>/services/ftype?op=frame</AIMService>
+          <ContainerDomain>ad.targetrtb.com</ContainerDomain>
+          <ServerLogging>true</ServerLogging>
+        </foros-creatives>
+      </cfg:AdClient></configuration>
+  </application>
+</colo:colocation>

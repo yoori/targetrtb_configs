@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colo:colocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:colo="http://www.foros.com/cms/colocation"
+  xmlns:descriptor="http://foros.com/ui/applicationDescriptor"
+  xsi:schemaLocation="http://www.foros.com/cms/colocation /opt/cms/share/model/colocation.xsd"
+  name="targetrtb"
+  description="">
+  <application id="2102" descriptor="FOROS-PGDB-3.5.0.128" name="FOROS-PGDB" description="">
+    <configuration><descriptor:configuration>
+        <descriptor:ForosManager>
+          <descriptor:Host>postdb00</descriptor:Host>
+          <descriptor:EffectiveUser>uiuser</descriptor:EffectiveUser>
+          <descriptor:EffectiveGroup>uiuser</descriptor:EffectiveGroup>
+          <descriptor:PrivateKeyFilename>/home/${user}/.ssh/pgdbkey-${colo}</descriptor:PrivateKeyFilename>
+          <descriptor:PrivateKey>-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEA5BpKIWwyfogT3e1AkOaX18KWeWQzIj6rhWwaXL/RCqtMBozX
+c3BJXvaKC4aw9hFWMafjFpfzgbkHAzL46JxwYxPpBL7SLHn75cQt7gwZg6I3pAdf
+1/avQthZMtN19+wwxt4p/Lt6c7FPxaOi7tqSz9kRU1THGOmeAszCCXk8KZQQcY5j
+dwfJBLl/PS2kvvIqX19tYqrjLsQ6s6s605DnwygMz6D775iPItVh9EFPS5vKAXJN
+HGUZ/ACTc2wV0UiIgzfP0enBUtH4NXqNFEQkQcZ40wE4j+6W6ldkRrtjyGmWzDG0
+mjWDD/kmFPHCnsP1HtK/FlzEPmZPXJwoFf6LEQIBIwKCAQEA3ZXhnM+BgjsL/ChN
+WY+MMK5mSgmQwi5AOHeklJ0UNkAAtefnPPC8TZ8Jwg3QegI2eWFDAAFS8wuDJ63b
+2qaZD8oy0WjpbQjI0JKwRlTlldDIVjMMpehSe3MU0knDDhikaWoaKLYfLo79CSKe
+Rx14rKb64zxpoywV1tWJSwgOjsiDcf0w08OR79bvZzqos20yvqP0sTRqcX7vOgt0
+g9LBS7vUD1jlQGfF6VdjWe09bWt0IgM8prYyScgL4jIlE3ZQVHIGu9z3GYgv5L3W
+uNyboL9dRVKOi8uy9fJm/HSoOwSHXd1GUK0GMfl9BbtaoJiJXr46uqsytP5uXceE
+4PtQKwKBgQD4dy+vOFg8KrXh4ef96KRB+a2kqSOzxKhbIgHxg7RaOmCrCn9E7Xyk
+v0gEwFPBgs3WNpeXhxNXazgLKG2laKQ14zDK7XRr542ZNOegkv93shWh8yx4ak15
+EuxHTYjuc2Qr589np8c+kRv3Tlx7qPyEasYrMKj/Ia1YSlyYKTiVtQKBgQDrBQc+
+N4RYgTzyNMWAtDBSRxgQmbMcMYKeAxX3BGV7QljaS+vaEqIIEXcroqaDQZQLTX0G
+NP+d22uLHmFoXCL/7r7QyLeEOmVa4GYW/zRmtYJvVLR4s9b0rQ+y9VD1VIDBbSux
+vX/rS2tqT73TFDl54ZQMJYsQ6e9JOT14FDu5bQKBgBxlZIkNwPDu8DcSgOnRcdun
+gY8pReiowsiWLBuaBfuu5nnykjPDXrO+Ftv4uR1uCOVIEVMlYUvRvUMakDApN1ad
+ny0ic7SPfeWfpXFv4q6YAnjol144CNqjE7Bgoe9dpQxVAcK0FsVSaZibPcT9XrAM
+M+etyivJVaOwuiAEtgJ7AoGAPG8B3MxyfSiMA8RtTPsiXkzLrH9LUGSArEnvtIwa
+GGGEj+ejDDCtUogl9UcU3+xKo9IY1bXbVHpAObda4FI04rm8Cc02gRZUk7YLn4Nz
+3+WH8L4ChXASs/H8uP1AtB0LKmyHlBrJHz9Hgby7yJAsCWXkPaNBBFlpapmwuHo7
+Pk8CgYEAzIlDJfk15hWvL/sBfTZcId1HecKQaPw8J24XIUinpP6Bqa2rnAx54NrQ
+AFRpBN0r67r/QdzPrDqW38RjY1ezTxL3xdTbYFwtxNd1toDX75X9RH8+HMSsI78N
+nfjcKx74Gkpp71s4yNHUAH90nmuVW24uWPaoHT2qOLbgw2/axQ8=
+-----END RSA PRIVATE KEY-----</descriptor:PrivateKey>
+          <descriptor:PublicKey></descriptor:PublicKey>
+          <descriptor:Autorestart>true</descriptor:Autorestart>
+        </descriptor:ForosManager>
+
+        <descriptor:MasterPostgres>
+          <descriptor:Host>postdb00</descriptor:Host>
+          <descriptor:Port>5432</descriptor:Port>
+          <descriptor:Database>stat</descriptor:Database>
+          <descriptor:user>postgres</descriptor:user>
+          <descriptor:password></descriptor:password>
+        </descriptor:MasterPostgres>
+
+        <descriptor:applyPatch>
+          <descriptor:user>oix</descriptor:user>
+          <descriptor:password>68hosnuea5aS5Ex</descriptor:password>
+        </descriptor:applyPatch>
+        <descriptor:applyPatchBI>
+          <descriptor:user>bi</descriptor:user>
+          <descriptor:password>Lz3FjqxprBbTSh2</descriptor:password>
+        </descriptor:applyPatchBI>
+        <descriptor:mergerParams>
+          <descriptor:pg_user>merger</descriptor:pg_user>
+          <descriptor:pg_password>dgBm3YtH4xaKP23</descriptor:pg_password>
+          <descriptor:logging_level>PERF</descriptor:logging_level>
+          <descriptor:failures_amount_threshold>30</descriptor:failures_amount_threshold>
+          <descriptor:workers>8</descriptor:workers>
+        </descriptor:mergerParams>
+        <descriptor:monitoringParams>
+          <descriptor:pg_user>ro</descriptor:pg_user>
+          <descriptor:pg_password>Q1oL6mm5hPTjnDQ</descriptor:pg_password>
+        </descriptor:monitoringParams>
+        <descriptor:Jobs>
+          <descriptor:User>job</descriptor:User>
+          <descriptor:Password>rN7g9RQtpu7ya6u</descriptor:Password>
+        </descriptor:Jobs>
+        <descriptor:LogMultiplexer>
+          <descriptor:interval>5</descriptor:interval>
+          <descriptor:csv_listener_port>10873</descriptor:csv_listener_port>
+          <descriptor:destinations>
+            <descriptor:Merger>
+              <descriptor:path>/u01/foros/pgdb/var/spool/merger/</descriptor:path>
+              <descriptor:exclude>SiteReferrerStats
+ChannelInventoryByCpm</descriptor:exclude>
+              <descriptor:threshold>100</descriptor:threshold>
+            </descriptor:Merger>
+            <descriptor:HdfsLoad>
+              <descriptor:path>/u01/foros/pgdb/var/spool/hdfs_load/</descriptor:path>
+              <descriptor:exclude>ChannelInventoryByCpm
+WebStats-2
+UserPropertyStats
+UserAgentStats
+TagPositionStats
+TagAuctionStats
+SiteUserStats
+SiteChannelStats
+SearchTermStatsDaily
+SearchEngineStatsDaily
+RequestStatsHourly
+PassbackStats
+PageLoadsDaily
+GlobalColoUserStats
+ExpressionPerformance
+ColoUserStats
+ColoStats
+ChannelPerformance
+ChannelInventory
+ChannelImpInventory
+ChannelCountStats
+CcUserStats
+CcStatsDaily
+CcgUserStats
+CcgStatsDaily
+CampaignUserStats
+AdvertiserUserStats
+ActionStats
+ActionRequests
+OptOutStats</descriptor:exclude>
+              <descriptor:threshold>3000</descriptor:threshold>
+            </descriptor:HdfsLoad>
+          </descriptor:destinations>
+          <descriptor:incoming_amount_threshold>50</descriptor:incoming_amount_threshold>
+        </descriptor:LogMultiplexer>
+      </descriptor:configuration></configuration>
+  </application>
+</colo:colocation>
