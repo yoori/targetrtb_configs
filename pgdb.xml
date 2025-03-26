@@ -5,7 +5,7 @@
   xsi:schemaLocation="http://www.foros.com/cms/colocation /opt/cms/share/model/colocation.xsd"
   name="targetrtb"
   description="">
-  <application id="2102" descriptor="FOROS-PGDB-3.5.0.128" name="FOROS-PGDB" description="">
+  <application id="2102" descriptor="FOROS-PGDB-3.5.0.129" name="FOROS-PGDB" description="">
     <configuration><descriptor:configuration>
         <descriptor:ForosManager>
           <descriptor:Host>postdb00</descriptor:Host>
