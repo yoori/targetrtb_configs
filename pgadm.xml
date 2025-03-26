@@ -16,19 +16,34 @@
           <descriptor:private_key_filename>/home/${user}/.ssh/pgadmkey-${colo}</descriptor:private_key_filename>
           <descriptor:effective_user>uiuser</descriptor:effective_user>
           <descriptor:effective_group>uiuser</descriptor:effective_group>
-          <descriptor:private_key>-----BEGIN DSA PRIVATE KEY-----
-MIIBvAIBAAKBgQDc9u1+bF3CLklyJdGaPF8BWLa7Tp9T3KOUGzPIiCiozQkOynW2
-/7n/P+ZYE36pY8VqP2oRgOP+jj2tdfQmdkBCgNfkJ2xc1Ij/4mvTLOc4zyxVabux
-lDti8qgEwr2kYfn0mPoKdNGK1s8S51PcVK1dNwxWNESfZAcVqj0/w0wQRQIVAN1o
-MDC/5QHBd2ndSb6LSlVXu04XAoGBALUCWi2RGjpmlUnlIx5u5ZFCRaaOBNGZahMD
-2zNZuKCMaGabr0mju58YiuHsOkxs/dybnb3etohVUZEnVgx7Kmrzd3Qn0thxeFC+
-IuWgJrALKUKDXAE4zdKu3qWsM93z1/TgWKYlqza8UatWh0SJj3+QnsXqnIYw4J3j
-jgrT0L2uAoGBAIr6IeI7nbhnZSq/l5RtFvPYDVTB0o1SzDGEpp8AN3bGvkXgjHGi
-CBftacuJRNZKjUXVVMXA8B9WvNOup+gySLQTOpwdROVAImvfdOGU6Z4pmq+UUap1
-Xq0jCE3aoA/PvHU5AHxX5RfzVocpC3SjVFYWmo9v6OM13WYQmplFHKKvAhQSitM3
-fzDjFelmfbd0XCJsbZj9Cw==
------END DSA PRIVATE KEY-----</descriptor:private_key>
-          <descriptor:public_key>ssh-dss AAAAB3NzaC1kc3MAAACBANz27X5sXcIuSXIl0Zo8XwFYtrtOn1Pco5QbM8iIKKjNCQ7Kdbb/uf8/5lgTfqljxWo/ahGA4/6OPa119CZ2QEKA1+QnbFzUiP/ia9Ms5zjPLFVpu7GUO2LyqATCvaRh+fSY+gp00YrWzxLnU9xUrV03DFY0RJ9kBxWqPT/DTBBFAAAAFQDdaDAwv+UBwXdp3Um+i0pVV7tOFwAAAIEAtQJaLZEaOmaVSeUjHm7lkUJFpo4E0ZlqEwPbM1m4oIxoZpuvSaO7nxiK4ew6TGz93Judvd62iFVRkSdWDHsqavN3dCfS2HF4UL4i5aAmsAspQoNcATjN0q7epawz3fPX9OBYpiWrNrxRq1aHRImPf5CexeqchjDgneOOCtPQva4AAACBAIr6IeI7nbhnZSq/l5RtFvPYDVTB0o1SzDGEpp8AN3bGvkXgjHGiCBftacuJRNZKjUXVVMXA8B9WvNOup+gySLQTOpwdROVAImvfdOGU6Z4pmq+UUap1Xq0jCE3aoA/PvHU5AHxX5RfzVocpC3SjVFYWmo9v6OM13WYQmplFHKKv</descriptor:public_key>
+          <descriptor:private_key>-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEA5BpKIWwyfogT3e1AkOaX18KWeWQzIj6rhWwaXL/RCqtMBozX
+c3BJXvaKC4aw9hFWMafjFpfzgbkHAzL46JxwYxPpBL7SLHn75cQt7gwZg6I3pAdf
+1/avQthZMtN19+wwxt4p/Lt6c7FPxaOi7tqSz9kRU1THGOmeAszCCXk8KZQQcY5j
+dwfJBLl/PS2kvvIqX19tYqrjLsQ6s6s605DnwygMz6D775iPItVh9EFPS5vKAXJN
+HGUZ/ACTc2wV0UiIgzfP0enBUtH4NXqNFEQkQcZ40wE4j+6W6ldkRrtjyGmWzDG0
+mjWDD/kmFPHCnsP1HtK/FlzEPmZPXJwoFf6LEQIBIwKCAQEA3ZXhnM+BgjsL/ChN
+WY+MMK5mSgmQwi5AOHeklJ0UNkAAtefnPPC8TZ8Jwg3QegI2eWFDAAFS8wuDJ63b
+2qaZD8oy0WjpbQjI0JKwRlTlldDIVjMMpehSe3MU0knDDhikaWoaKLYfLo79CSKe
+Rx14rKb64zxpoywV1tWJSwgOjsiDcf0w08OR79bvZzqos20yvqP0sTRqcX7vOgt0
+g9LBS7vUD1jlQGfF6VdjWe09bWt0IgM8prYyScgL4jIlE3ZQVHIGu9z3GYgv5L3W
+uNyboL9dRVKOi8uy9fJm/HSoOwSHXd1GUK0GMfl9BbtaoJiJXr46uqsytP5uXceE
+4PtQKwKBgQD4dy+vOFg8KrXh4ef96KRB+a2kqSOzxKhbIgHxg7RaOmCrCn9E7Xyk
+v0gEwFPBgs3WNpeXhxNXazgLKG2laKQ14zDK7XRr542ZNOegkv93shWh8yx4ak15
+EuxHTYjuc2Qr589np8c+kRv3Tlx7qPyEasYrMKj/Ia1YSlyYKTiVtQKBgQDrBQc+
+N4RYgTzyNMWAtDBSRxgQmbMcMYKeAxX3BGV7QljaS+vaEqIIEXcroqaDQZQLTX0G
+NP+d22uLHmFoXCL/7r7QyLeEOmVa4GYW/zRmtYJvVLR4s9b0rQ+y9VD1VIDBbSux
+vX/rS2tqT73TFDl54ZQMJYsQ6e9JOT14FDu5bQKBgBxlZIkNwPDu8DcSgOnRcdun
+gY8pReiowsiWLBuaBfuu5nnykjPDXrO+Ftv4uR1uCOVIEVMlYUvRvUMakDApN1ad
+ny0ic7SPfeWfpXFv4q6YAnjol144CNqjE7Bgoe9dpQxVAcK0FsVSaZibPcT9XrAM
+M+etyivJVaOwuiAEtgJ7AoGAPG8B3MxyfSiMA8RtTPsiXkzLrH9LUGSArEnvtIwa
+GGGEj+ejDDCtUogl9UcU3+xKo9IY1bXbVHpAObda4FI04rm8Cc02gRZUk7YLn4Nz
+3+WH8L4ChXASs/H8uP1AtB0LKmyHlBrJHz9Hgby7yJAsCWXkPaNBBFlpapmwuHo7
+Pk8CgYEAzIlDJfk15hWvL/sBfTZcId1HecKQaPw8J24XIUinpP6Bqa2rnAx54NrQ
+AFRpBN0r67r/QdzPrDqW38RjY1ezTxL3xdTbYFwtxNd1toDX75X9RH8+HMSsI78N
+nfjcKx74Gkpp71s4yNHUAH90nmuVW24uWPaoHT2qOLbgw2/axQ8=
+-----END RSA PRIVATE KEY-----</descriptor:private_key>
+          <descriptor:public_key>ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA5BpKIWwyfogT3e1AkOaX18KWeWQzIj6rhWwaXL/RCqtMBozXc3BJXvaKC4aw9hFWMafjFpfzgbkHAzL46JxwYxPpBL7SLHn75cQt7gwZg6I3pAdf1/avQthZMtN19+wwxt4p/Lt6c7FPxaOi7tqSz9kRU1THGOmeAszCCXk8KZQQcY5jdwfJBLl/PS2kvvIqX19tYqrjLsQ6s6s605DnwygMz6D775iPItVh9EFPS5vKAXJNHGUZ/ACTc2wV0UiIgzfP0enBUtH4NXqNFEQkQcZ40wE4j+6W6ldkRrtjyGmWzDG0mjWDD/kmFPHCnsP1HtK/FlzEPmZPXJwoFf6LEQ==</descriptor:public_key>
           <descriptor:autorestart>true</descriptor:autorestart>
         </descriptor:ForosManager>
 
