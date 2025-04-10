@@ -80,13 +80,10 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
               keep_alive="true" keep_alive_timeout="1" max_keep_alive_requests="10" proxy_protocol="false">
               <configuration:adservingDomain name="ad.targetrtb.com"/>
               <configuration:adservingDomain name="ad.targetrtb.ru"/>
-              <configuration:adservingDomain name="ad.ad-blast.ru"/>
-              <configuration:adservingDomain name="ad-blast.ru"/>
 
               <configuration:videoDomain name="video.targetrtb.com"/>
               <configuration:videoDomain name="vast.targetrtb.com"/>
               <configuration:videoDomain name="vast.targetrtb.ru"/>
-              <configuration:videoDomain name="vast.ad-blast.ru"/>
             </configuration:virtualServer>
 
             <configuration:virtualServer port="80"
@@ -94,16 +91,12 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
               keep_alive="true" keep_alive_timeout="1" max_keep_alive_requests="10" proxy_protocol="false">
               <configuration:adservingDomain name="ad.targetrtb.com"/>
               <configuration:adservingDomain name="ad.targetrtb.ru"/>
-              <configuration:adservingDomain name="ad.ad-blast.ru"/>
-              <configuration:adservingDomain name="ad-blast.ru"/>
 
               <configuration:adservingDomain name="match.targetrtb.com"/>
               <configuration:adservingDomain name="match.targetrtb.ru"/>
-              <configuration:adservingDomain name="match.ad-blast.ru"/>
 
               <configuration:thirdPartyContentDomain name="media.targetrtb.com"/>
               <configuration:thirdPartyContentDomain name="media.targetrtb.ru"/>
-              <configuration:thirdPartyContentDomain name="media.ad-blast.ru"/>
 
               <configuration:videoDomain name="video.targetrtb.com"/>
             </configuration:virtualServer>
@@ -111,14 +104,11 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
             <configuration:virtualServer port="80" internal_port="10181" keep_alive="true" keep_alive_timeout="20" max_keep_alive_requests="10000" proxy_protocol="false">
               <configuration:biddingDomain name="dsp.targetrtb.com"/>
               <configuration:biddingDomain name="dsp.targetrtb.ru"/>
-              <configuration:biddingDomain name="dsp.ad-blast.ru"/>
             </configuration:virtualServer>
 
             <configuration:virtualServer port="80" internal_port="10183" mon_port="10381" nginx_index="2" keep_alive="true" keep_alive_timeout="1" max_keep_alive_requests="10" proxy_protocol="false">
               <configuration:adservingDomain name="match.targetrtb.com"/>
               <configuration:adservingDomain name="match.targetrtb.ru"/>
-              <configuration:adservingDomain name="ad-blast.ru"/>
-              <configuration:adservingDomain name="match.ad-blast.ru"/>
             </configuration:virtualServer>
 
             <configuration:secureVirtualServer port="443"
@@ -230,17 +220,13 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
               </configuration:ca>
               <configuration:adservingDomain name="ad.targetrtb.com"/>
               <configuration:adservingDomain name="ad.targetrtb.ru"/>
-              <configuration:adservingDomain name="ad.ad-blast.ru"/>
-              <configuration:adservingDomain name="ad-blast.ru"/>
 
               <configuration:adservingDomain name="match.targetrtb.com"/>
               <configuration:adservingDomain name="match.targetrtb.ru"/>
-              <configuration:adservingDomain name="match.ad-blast.ru"/>
 
               <configuration:videoDomain name="video.targetrtb.com"/>
               <configuration:videoDomain name="vast.targetrtb.com"/>
               <configuration:videoDomain name="vast.targetrtb.ru"/>
-              <configuration:videoDomain name="vast.ad-blast.ru"/>
             </configuration:secureVirtualServer>
 
             <configuration:secureVirtualServer port="443" internal_port="10147" keep_alive="true" keep_alive_timeout="5" max_keep_alive_requests="100" enable="true" proxy_protocol="false">
@@ -351,13 +337,9 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
               <configuration:adservingDomain name="ad.targetrtb.com"/>
               <configuration:adservingDomain name="ad.targetrtb.ru"/>
               <configuration:adservingDomain name="match.targetrtb.ru"/>
-              <configuration:adservingDomain name="ad.ad-blast.ru"/>
-              <configuration:adservingDomain name="ad-blast.ru"/>
-              <configuration:adservingDomain name="match.ad-blast.ru"/>
 
               <configuration:thirdPartyContentDomain name="media.targetrtb.com"/>
               <configuration:thirdPartyContentDomain name="media.targetrtb.ru"/>
-              <configuration:thirdPartyContentDomain name="media.ad-blast.ru"/>
 
               <configuration:videoDomain name="video.targetrtb.com"/>
             </configuration:secureVirtualServer>
@@ -469,7 +451,6 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
 
               <configuration:biddingDomain name="dsp.targetrtb.com"/>
               <configuration:biddingDomain name="dsp.targetrtb.ru"/>
-              <configuration:biddingDomain name="dsp.ad-blast.ru"/>
             </configuration:secureVirtualServer>
 
             <configuration:secureVirtualServer port="443" internal_port="10148" mon_port="10346" nginx_index="2" keep_alive="true" keep_alive_timeout="1" max_keep_alive_requests="10" enable="true" proxy_protocol="false">
@@ -579,8 +560,6 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
 
               <configuration:adservingDomain name="match.targetrtb.com"/>
               <configuration:adservingDomain name="match.targetrtb.ru"/>
-              <configuration:adservingDomain name="ad-blast.ru"/>
-              <configuration:adservingDomain name="match.ad-blast.ru"/>
             </configuration:secureVirtualServer>
 
             <configuration:uid_key></configuration:uid_key>
