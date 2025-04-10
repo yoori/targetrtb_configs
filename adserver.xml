@@ -1552,7 +1552,7 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
               </configuration:statLogging>
             </configuration:logGeneralizer></configuration>
         </service>
-        <service descriptor="AdCluster/BackendSubCluster/ExpressionMatcher" name="ExpressionMatcher" host="adbe01 adbe02 adbe03 adbe04 adbe05 adbe06">
+        <service descriptor="AdCluster/BackendSubCluster/ExpressionMatcher" name="ExpressionMatcher" host="adbe01 adbe02">
           <configuration><configuration:expressionMatcher enable_channel_overlap_stats="false" positive_triggers_group_size="1" negative_triggers_group_size="0" max_trigger_visits="0" channel_match_cache_size="8589934592">
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:threadParams min="50"/>
@@ -1562,7 +1562,7 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
               <configuration:storage min_free_space="0" max_inventory_undumped_size="15000" max_user_trigger_undumped_size="15000"/>
             </configuration:expressionMatcher></configuration>
         </service>
-        <service descriptor="AdCluster/BackendSubCluster/RequestInfoManager" name="RequestInfoManager" host="adbe01 adbe02 adbe03 adbe04 adbe05 adbe06">
+        <service descriptor="AdCluster/BackendSubCluster/RequestInfoManager" name="RequestInfoManager" host="adbe01 adbe02">
           <configuration><configuration:requestInfoManager>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:processing threads="160" cache_blocks="1000"/>
