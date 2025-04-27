@@ -1360,7 +1360,7 @@ KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
           <configuration:Cookies domain=".targetrtb.com" path="/">
             <configuration:Cookie name="OPTED_OUT" domain=".targetrtb.com" path="/" expires="157680000"/>
           </configuration:Cookies>
-          <configuration:inventoryStats simplifying="100" distrib_count="32"/>
+          <configuration:inventoryStats simplifying="2" distrib_count="32"/>
           <configuration:channelTriggerImpStats enable="false"/>
           <configuration:tagGroupStats enable="false"/>
           <configuration:snmpStats enable="true" monitoring_tag_id="12751" monitoring_country="ru" oid_suffix="0"/>
@@ -1611,17 +1611,17 @@ KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
               </configuration:statLogging>
             </configuration:logGeneralizer></configuration>
         </service>
-        <service descriptor="AdCluster/BackendSubCluster/ExpressionMatcher" name="ExpressionMatcher" host="adbe01 adbe02">
+        <service descriptor="AdCluster/BackendSubCluster/ExpressionMatcher" name="ExpressionMatcher" host="adbe01">
           <configuration><configuration:expressionMatcher enable_channel_overlap_stats="false" positive_triggers_group_size="1" negative_triggers_group_size="0" max_trigger_visits="0" channel_match_cache_size="8589934592">
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:threadParams min="50"/>
               <configuration:updateParams period="1200"/>
               <configuration:statLogging file_check_period="10" flush_period="300" activity_flush_period="3600" inventory_ecpm_flush_period="3600"/>
-              <configuration:processing threads="40" cache_blocks="0"/>
+              <configuration:processing threads="200" cache_blocks="0"/>
               <configuration:storage min_free_space="0" max_inventory_undumped_size="15000" max_user_trigger_undumped_size="15000"/>
             </configuration:expressionMatcher></configuration>
         </service>
-        <service descriptor="AdCluster/BackendSubCluster/RequestInfoManager" name="RequestInfoManager" host="adbe01 adbe02">
+        <service descriptor="AdCluster/BackendSubCluster/RequestInfoManager" name="RequestInfoManager" host="adbe01">
           <configuration><configuration:requestInfoManager>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:processing threads="160" cache_blocks="1000"/>
