@@ -737,7 +737,7 @@ KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
                 mime_encoded_vast_preclick=""
                 skip_ext_category="false"
                 native_instantiate_type="adm" native_impression_tracker_type="resources">
-                <configuration:userBind passback="true" redirect="//ads.betweendigital.com/match?bidder_id=130&amp;external_user_id=##UNSIGNEDSSPUID=##"/>
+                <configuration:userBind passback="true" redirect="//ads.betweendigital.com/match?bidder_id=445&amp;external_user_id=##UNSIGNEDSSPUID=##"/>
               </configuration:source>
 
               <!--
@@ -780,43 +780,49 @@ KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
                 </configuration:userBind>
               </configuration:source>
 
-              <configuration:source id="bidease" instantiate_type="body" request_type="openrtb" notice="nurl" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+              <configuration:source id="bidease" instantiate_type="body" request_type="openrtb" notice="nurl" truncate_domain="false"
+                vast_instantiate_type="body" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
               </configuration:source>
 
-              <configuration:source id="qtm" instantiate_type="body" request_type="openrtb" notice="nurl" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+              <configuration:source id="qtm" instantiate_type="body" request_type="openrtb" notice="nurl" truncate_domain="false" vast_notice="disabled"
+                fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
                 <!--<configuration:userBind passback="true" redirect="https://match.targetrtb.com/userbind?src=qtm&amp;id=##UNSIGNEDSSPUID=##">
                 </configuration:userBind>-->
               </configuration:source>
-              <configuration:source id="qtm_pull" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+
+              <configuration:source id="qtm_pull" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled"
+                fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
                 <configuration:userBind passback="false"
                   redirect="https://matching.mobilebanner.ru/p.gif?pid=target-qm&amp;id=##UNSIGNEDSSPUID=##&amp;rt=https%3A%2F%2Fmatch.targetrtb.com%2Fuserbind%3Fsrc%3Dqtm%26id%3D%25external_user_id%25">
                 </configuration:userBind>
               </configuration:source>
+
               <configuration:source id="qtm_pull2" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
                 <configuration:userBind passback="false"
                   redirect="http://matching.mobilebanner.ru/p.gif?pid=target-qm&amp;id=##UNSIGNEDSSPUID=##">
                 </configuration:userBind>
               </configuration:source>
+
               <configuration:source id="qtm_pull3" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
                 <configuration:userBind passback="false"
                   redirect="http://matching.tlrtb.com/p.gif?pid=target-qm&amp;id=##UNSIGNEDSSPUID=##">
                 </configuration:userBind>
               </configuration:source>
+
               <configuration:source id="qtm_pull4" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
                 <configuration:userBind passback="false"
                   redirect="https://matching.2ad.wtf/p.gif?pid=target-qm&amp;id=##UNSIGNEDSSPUID=##&amp;uid=##PUSH_DATA=##">
                 </configuration:userBind>
               </configuration:source>
+
               <configuration:source id="adr" instantiate_type="iframe with url" request_type="adriver" notice="disabled" truncate_domain="false"
                 vast_notice="disabled" vast_instantiate_type="nonsecure url"
                 fill_adid="true" ipw_extension="false"
                 custom_click="false" skip_ext_category="false"
                 erid_return_type="array">
-                <configuration:userBind passback="false" redirect="https://ssp.adriver.ru/cgi-bin/sync.cgi?dsp_id=149&amp;external_id=##SSPUID=##">
-
-
-                </configuration:userBind>
+                <configuration:userBind passback="false" redirect="https://ssp.adriver.ru/cgi-bin/sync.cgi?dsp_id=149&amp;external_id=##SSPUID=##"/>
               </configuration:source>
+
               <configuration:source id="bidvol" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
                 <configuration:userBind passback="true"
                   redirect="https://ssp.bidvol.com/usersync?id=##UNSIGNEDSSPUID=##&amp;dspcsid=26"
@@ -826,37 +832,34 @@ KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
                 <!--<configuration:userBind passback="false" redirect="//sync.dmp.otm-r.com/match/targetrtb?id=&amp;r=https%3A%2F%2Fmatch.targetrtb.com%2Fuserbind%3Fsrc%3Dotm%26id%3D%7Bpid%7D"/>-->
               </configuration:source>
 
-              <configuration:source id="get" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="true" redirect="//exchange.rtbget.com/match?dsp=12&amp;external_uid=##SSPUID=##">
-
-
-                </configuration:userBind>
+              <configuration:source id="get" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled"
+                fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="true" redirect="//exchange.rtbget.com/match?dsp=12&amp;external_uid=##SSPUID=##"/>
               </configuration:source>
-              <configuration:source id="avm" instantiate_type="iframe with url" request_type="openrtb" notice="nurl" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="false" redirect="//rtb.am15.net/aux/sync?advm_nid=60624&amp;uid=##SSPUID=##">
 
-
-                </configuration:userBind>
+              <configuration:source id="avm" instantiate_type="iframe with url" request_type="openrtb" notice="nurl" truncate_domain="false" vast_notice="disabled"
+                fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="false" redirect="//rtb.am15.net/aux/sync?advm_nid=60624&amp;uid=##SSPUID=##"/>
               </configuration:source>
-              <configuration:source id="atv" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="false" redirect="//sync.adaptv.advertising.com/sync?type=gif&amp;key=imarker&amp;uid=##UNSIGNEDSSPUID=##">
 
-
-                </configuration:userBind>
+              <configuration:source id="atv" instantiate_type="body" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false"
+		custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="false" redirect="//sync.adaptv.advertising.com/sync?type=gif&amp;key=imarker&amp;uid=##UNSIGNEDSSPUID=##"/>
               </configuration:source>
-              <configuration:source id="ezy" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="false" redirect="//rtb.adeasy.ru/cookie-sync/store/21/?dspuid=##SSPUID=##">
 
-
-                </configuration:userBind>
+              <configuration:source id="ezy" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled"
+                fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="false" redirect="//rtb.adeasy.ru/cookie-sync/store/21/?dspuid=##SSPUID=##"/>
               </configuration:source>
-              <configuration:source id="adt" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="false" redirect="//advombat.ru/0.gif?pid=IMARKER&amp;id=##UNSIGNEDSSPUID=##">
 
-
-                </configuration:userBind>
+              <configuration:source id="adt" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled"
+                fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="false" redirect="//advombat.ru/0.gif?pid=IMARKER&amp;id=##UNSIGNEDSSPUID=##"/>
               </configuration:source>
-              <configuration:source id="adwise" instantiate_type="body" request_type="openrtb" notice="nurl" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+
+              <configuration:source id="adwise" instantiate_type="body" request_type="openrtb" notice="nurl" truncate_domain="false" vast_notice="disabled"
+                fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
               </configuration:source>
 
               <configuration:source id="rtw" instantiate_type="iframe with url"
@@ -869,7 +872,7 @@ KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
                 custom_click="false"
                 native_instantiate_type="adm" native_impression_tracker_type="resources" skip_ext_category="false">
                 <configuration:userBind passback="false"
-                                        redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
+                  redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
                 <!--
                 <configuration:userBind passback="false"
                   redirect="https://matching.mobilebanner.ru/p.gif?pid=target-qm&amp;id=##UNSIGNEDSSPUID=##&amp;rt=https%3A%2F%2Fmatch.targetrtb.com%2Fuserbind%3Fsrc%3Dqtm%26id%3D%25external_user_id%25"/>
@@ -877,7 +880,11 @@ KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
                 <!--<configuration:userBind passback="true" redirect="https://ad-blast.ru/userbind?src=adblast1&amp;pbf=1&amp;gi=1&amp;passback=https://d.uuidksinc.net/match/241/##mime-url:SSPUID=##">
                 </configuration:userBind>-->
               </configuration:source>
-              <configuration:source id="rtw_native" instantiate_type="iframe with url" request_type="openrtb" notice="nurl" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" native_instantiate_type="adm" native_impression_tracker_type="resources" skip_ext_category="false">
+
+              <configuration:source id="rtw_native" instantiate_type="iframe with url" request_type="openrtb"
+		notice="nurl" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" native_instantiate_type="adm" native_impression_tracker_type="resources"
+		skip_ext_category="false">
                 <configuration:userBind passback="false" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
                 <!--
                 <configuration:userBind passback="false"
@@ -887,147 +894,220 @@ KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
                 </configuration:userBind>-->
 
               </configuration:source>
-              <configuration:source id="lvr" instantiate_type="body" request_type="liverail" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="true" redirect="//t4.liverail.com/?metric=csync&amp;p=3025&amp;s=##SSPUID=##">
 
-
-                </configuration:userBind>
+              <configuration:source id="lvr" instantiate_type="body" request_type="liverail" notice="disabled" truncate_domain="false"
+                vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="true" redirect="//t4.liverail.com/?metric=csync&amp;p=3025&amp;s=##SSPUID=##"/>
               </configuration:source>
+
               <configuration:source id="amb" instantiate_type="body"
                 request_type="openrtb"
                 notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
                 <configuration:userBind passback="false"
                   redirect="https://dmg.digitaltarget.ru/1/7500/i/i?a=1033&amp;e=##UNSIGNEDSSPUID=##&amp;i=##RANDOM=##"/>
               </configuration:source>
-              <configuration:source id="rpb" instantiate_type="body" request_type="openrtb with click url" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="true" preclick="${CLICK_URL}" mime_encoded_preclick="${CLICK_URL:UE}" vast_preclick="${CLICK_URL}" mime_encoded_vast_preclick="${CLICK_URL:UE}" skip_ext_category="false">
+
+              <configuration:source id="rpb" instantiate_type="body" request_type="openrtb with click url"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="true" preclick="${CLICK_URL}"
+		mime_encoded_preclick="${CLICK_URL:UE}" vast_preclick="${CLICK_URL}" mime_encoded_vast_preclick="${CLICK_URL:UE}" skip_ext_category="false">
                 <configuration:userBind passback="false" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
                 <!--
                 <configuration:userBind passback="false" redirect="https://matching.mobilebanner.ru/p.gif?pid=target-qm&amp;id=##UNSIGNEDSSPUID=##&amp;rt=https%3A%2F%2Fmatch.targetrtb.com%2Fuserbind%3Fsrc%3Dqtm%26id%3D%25external_user_id%25">
                 </configuration:userBind>
                 -->
               </configuration:source>
+
               <configuration:source id="buz" instantiate_type="body"
-                                    request_type="openrtb"
-                                    notice="nurl"
-                                    truncate_domain="false"
-                                    vast_notice="disabled"
-                                    fill_adid="false"
-                                    ipw_extension="false"
-                                    custom_click="false"
-                                    skip_ext_category="false">
-                <!--
-                <configuration:userBind passback="false" redirect="https://matching.mobilebanner.ru/p.gif?pid=target-qm&amp;id=##UNSIGNEDSSPUID=##&amp;rt=https%3A%2F%2Fmatch.targetrtb.com%2Fuserbind%3Fsrc%3Dqtm%26id%3D%25external_user_id%25"/>
-                -->
-                <!--<configuration:userBind passback="false"
-                  redirect="https://match.targetrtb.com/userbind?src=bidvol&amp;pbf=1&amp;gi=1"/>-->
-                <!--<configuration:userBind passback="false" redirect="https://cm.mgid.com/m?cdsp=476653&amp;c=##UNSIGNEDSSPUID=##"/>-->
-                <!--<configuration:userBind passback="false" redirect="//sync.dmp.otm-r.com/match/targetrtb?id=&amp;r=https%3A%2F%2Fmatch.targetrtb.com%2Fuserbind%3Fsrc%3Dotm%26id%3D%7Bpid%7D"/>-->
-                <configuration:userBind passback="false" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
-                <!--
-                <configuration:userBind passback="false" redirect="https://ad-blast.ru/userbind?src=adblast1&amp;pbf=1&amp;gi=1"/>
-                -->
+		request_type="openrtb"
+		notice="nurl"
+		truncate_domain="false"
+		vast_notice="disabled"
+		fill_adid="false"
+		ipw_extension="false"
+		custom_click="false"
+		skip_ext_category="false">
+                <!--<configuration:userBind passback="false" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>-->
+                <configuration:userBind passback="false" redirect="https://exchange.buzzoola.com/cookiesync/dsp/targetdsp-video?uid=##UNSIGNEDSSPUID=##"/>
               </configuration:source>
+
               <configuration:source id="gpm" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
                 <configuration:userBind redirect="https://tms.dmp.wi-fi.ru/?dmpkit_cid=81460eb5-647b-4d9b-a3e3-7863f294c3da&amp;dmpkit_evid=71dee32b-4150-4012-9a7e-631445c66051&amp;g_adv=gen&amp;g_cp1=##UNSIGNEDSSPUID=##" passback="false"/>
               </configuration:source>
-              <configuration:source id="bgn" instantiate_type="url" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="false" redirect="https://match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1">
 
-                </configuration:userBind>
+              <configuration:source id="bgn" instantiate_type="url" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false"
+		ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="false" redirect="https://match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
               </configuration:source>
-              <configuration:source id="google" instantiate_type="iframe with url" request_type="google" notice="disabled" truncate_domain="false" vast_instantiate_type="video url" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" preclick="%%CLICK_URL_UNESC%%" mime_encoded_preclick="%%CLICK_URL_ESC%%" vast_preclick="%%CLICK_URL_UNESC%%" mime_encoded_vast_preclick="%%CLICK_URL_ESC%%" skip_ext_category="false">
-                <configuration:userBind passback="false" redirect="https://cm.g.doubleclick.net/pixel?google_nid=kvatimedia&amp;google_push=##mime-url:PUSH_DATA=##">
 
-
-                </configuration:userBind>
+              <configuration:source id="google" instantiate_type="iframe with url" request_type="google"
+		notice="disabled" truncate_domain="false" vast_instantiate_type="video url" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" preclick="%%CLICK_URL_UNESC%%"
+		mime_encoded_preclick="%%CLICK_URL_ESC%%" vast_preclick="%%CLICK_URL_UNESC%%" mime_encoded_vast_preclick="%%CLICK_URL_ESC%%" skip_ext_category="false">
+                <configuration:userBind passback="false" redirect="https://cm.g.doubleclick.net/pixel?google_nid=kvatimedia&amp;google_push=##mime-url:PUSH_DATA=##"/>
               </configuration:source>
-              <configuration:source id="otm" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="true" redirect="https://sync.dmp.otm-r.com/match/programmatic.img?id=##SSPUID=##">
 
-
-                </configuration:userBind>
+              <configuration:source id="otm" instantiate_type="body" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="true" redirect="https://sync.dmp.otm-r.com/match/target_rtb?id=##SSPUID=##"/>
               </configuration:source>
-              <configuration:source id="advark" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_instantiate_type="url" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+
+              <configuration:source id="advark" instantiate_type="body" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_instantiate_type="url" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
                 <configuration:userBind passback="false" redirect="https://ad-blast.ru/userbind?src=adblast1&amp;pbf=1&amp;gi=1"/>
               </configuration:source>
-              <configuration:source id="otm_pull" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="false" redirect="https://sync.dmp.otm-r.com/match/programmatic.img?id=##SSPUID=##&amp;fp=##mime-url:PUSH_DATA=##">
 
+              <configuration:source id="otm_pull" instantiate_type="body" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="false" redirect="https://sync.dmp.otm-r.com/match/programmatic.img?id=##SSPUID=##&amp;fp=##mime-url:PUSH_DATA=##"/>
+              </configuration:source>
 
-                </configuration:userBind>
+              <configuration:source id="relap" instantiate_type="url" request_type="openrtb"
+		notice="burl" truncate_domain="false" vast_instantiate_type="body" vast_notice="burl"
+		native_instantiate_type="adm" native_impression_tracker_type="resources"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="false" redirect="https://relap.io/partners/targetrtbcs.gif?uid=##SSPUID=##"/>
               </configuration:source>
-              <configuration:source id="relap" instantiate_type="url" request_type="openrtb" notice="burl" truncate_domain="false" vast_instantiate_type="body" vast_notice="burl" native_instantiate_type="adm" native_impression_tracker_type="resources" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="false" redirect="https://relap.io/partners/targetrtbcs.gif?uid=##SSPUID=##">
-                </configuration:userBind>
-              </configuration:source>
-              <configuration:source id="bind0" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+
+              <configuration:source id="bind0" instantiate_type="body" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
                 <!--<configuration:userBind passback="false"
                   redirect="https://ad-blast.ru/userbind?src=adblast1&amp;pbf=1&amp;gi=1&amp;passback=https://d.uuidksinc.net/match/241/##mime-url:SSPUID=##"/>-->
                 <configuration:userBind passback="false"
                   redirect="https://sync.dmp.otm-r.com/match/targetrtb?id=&amp;r=https%3A%2F%2Fmatch.targetrtb.com%2Fuserbind%3Fsrc%3Dotm%26id%3D%7Bpid%7Dotm"/>
               </configuration:source>
-              <configuration:source id="yandex_bfg" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="true" redirect="//stub">
 
-                </configuration:userBind>
+              <configuration:source id="yandex_bfg" instantiate_type="body" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="true" redirect="//stub"/>
               </configuration:source>
-              <configuration:source id="apf" instantiate_type="iframe with url" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="true" redirect="//p.adframesrc.com/rtb/common/match.php?partner=imarker&amp;amp;external_uid=##SSPUID=##">
 
-
-                </configuration:userBind>
+              <configuration:source id="apf" instantiate_type="iframe with url" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="true" redirect="//p.adframesrc.com/rtb/common/match.php?partner=imarker&amp;amp;external_uid=##SSPUID=##"/>
               </configuration:source>
-              <configuration:source id="mnt" instantiate_type="iframe with url" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
-              <configuration:source id="adn" instantiate_type="iframe with url" request_type="openrtb" notice="nurl" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
-              <configuration:source id="pape" instantiate_type="body" request_type="openrtb with click url" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="true" preclick="${CLICK_URL}" mime_encoded_preclick="${CLICK_URL_ENC}" vast_preclick="${CLICK_URL}" mime_encoded_vast_preclick="${CLICK_URL_ENC}" skip_ext_category="false"/>
-              <configuration:source id="smartyads" instantiate_type="iframe with url" request_type="openrtb" notice="disabled" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" native_instantiate_type="adm_native" native_impression_tracker_type="imp" skip_ext_category="false">
-                <configuration:userBind passback="false" redirect="https://match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1">
 
-                </configuration:userBind>
+              <configuration:source id="mnt" instantiate_type="iframe with url" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
+
+              <configuration:source id="adn" instantiate_type="iframe with url" request_type="openrtb"
+		notice="nurl" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
+
+              <configuration:source id="pape" instantiate_type="body" request_type="openrtb with click url"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="true" preclick="${CLICK_URL}"
+		mime_encoded_preclick="${CLICK_URL_ENC}" vast_preclick="${CLICK_URL}" mime_encoded_vast_preclick="${CLICK_URL_ENC}" skip_ext_category="false"/>
+
+              <configuration:source id="smartyads" instantiate_type="iframe with url" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" native_instantiate_type="adm_native"
+		native_impression_tracker_type="imp" skip_ext_category="false">
+                <configuration:userBind passback="false" redirect="https://match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
               </configuration:source>
-              <configuration:source id="videonow" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_instantiate_type="url" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+
+              <configuration:source id="videonow" instantiate_type="body" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_instantiate_type="url" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
                 <configuration:userBind passback="false" redirect="https://sync.videonow.ru/ssp?dsp=39&amp;uuid=##UNSIGNEDSSPUID=##">
                 </configuration:userBind>
               </configuration:source>
-              <configuration:source id="natroll" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_instantiate_type="url" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
-              <configuration:source id="appodeal" instantiate_type="iframe with url" request_type="openrtb" notice="disabled" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
-              <configuration:source id="ironsrc" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
-              <configuration:source id="ina" instantiate_type="iframe with url" request_type="openrtb" notice="nurl" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
-              <configuration:source id="adcolony" instantiate_type="body" request_type="openrtb" notice="nurl" truncate_domain="false" vast_instantiate_type="body" vast_notice="nurl" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
-              <configuration:source id="mtd" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="true" redirect="https://mediatoday.ru/core/match.gif?s=5&amp;id=##UNSIGNEDSSPUID=##">
 
+              <configuration:source id="natroll" instantiate_type="body" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_instantiate_type="url" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
 
-                </configuration:userBind>
+              <configuration:source id="appodeal" instantiate_type="iframe with url" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
+
+              <configuration:source id="ironsrc" instantiate_type="body" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
+
+              <configuration:source id="ina" instantiate_type="iframe with url" request_type="openrtb"
+		notice="nurl" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
+
+              <configuration:source id="adcolony" instantiate_type="body" request_type="openrtb"
+		notice="nurl" truncate_domain="false" vast_instantiate_type="body" vast_notice="nurl"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
+
+              <configuration:source id="mtd" instantiate_type="body" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="true" redirect="https://mediatoday.ru/core/match.gif?s=5&amp;id=##UNSIGNEDSSPUID=##"/>
               </configuration:source>
-              <configuration:source id="convertise" default_account_id="10933" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" max_bid_time="250" custom_click="false" skip_ext_category="false">
+
+              <configuration:source id="convertise" default_account_id="10933" instantiate_type="body" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" max_bid_time="250" custom_click="false" skip_ext_category="false">
                 <configuration:userBind passback="true"/>
               </configuration:source>
-              <configuration:source id="afx" instantiate_type="url" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
-              <configuration:source id="opx" instantiate_type="iframe with url" request_type="openx" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="true" preclick="{clickurl}" mime_encoded_preclick="{clickurl_enc}" vast_preclick="{clickurl}" mime_encoded_vast_preclick="{clickurl_enc}" skip_ext_category="false"/>
-              <configuration:source id="ask" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
-              <configuration:source id="wmb" instantiate_type="iframe with url" request_type="openrtb" notice="nurl" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
-              <configuration:source id="sys" instantiate_type="body" request_type="openrtb with click url" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
-              <configuration:source id="anx" default_account_id="9186" instantiate_type="encoded url parameters" request_type="appnexus" notice="disabled" truncate_domain="false" appnexus_member_id="2834" vast_notice="disabled" fill_adid="false" ipw_extension="false" max_bid_time="55" custom_click="false" skip_ext_category="false"/>
-              <configuration:source id="spy" instantiate_type="url" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
-              <configuration:source id="rambler" instantiate_type="url" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="true" redirect="https://match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1">
 
-                </configuration:userBind>
-              </configuration:source>
-              <configuration:source id="adnetic" instantiate_type="body" request_type="openrtb" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" native_instantiate_type="adm" native_impression_tracker_type="js" skip_ext_category="false"/>
-              <configuration:source id="mobfox" instantiate_type="body" notice="nurl" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" native_instantiate_type="adm_native" native_impression_tracker_type="imp" skip_ext_category="false">
-                <configuration:userBind passback="true" redirect="https://match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1">
+              <configuration:source id="afx" instantiate_type="url" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
 
-                </configuration:userBind>
+              <configuration:source id="opx" instantiate_type="iframe with url" request_type="openx"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="true" preclick="{clickurl}"
+		mime_encoded_preclick="{clickurl_enc}" vast_preclick="{clickurl}" mime_encoded_vast_preclick="{clickurl_enc}" skip_ext_category="false"/>
+
+              <configuration:source id="ask" instantiate_type="body" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
+
+              <configuration:source id="wmb" instantiate_type="iframe with url" request_type="openrtb"
+		notice="nurl" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
+
+              <configuration:source id="sys" instantiate_type="body" request_type="openrtb with click url"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
+
+              <configuration:source id="anx" default_account_id="9186" instantiate_type="encoded url parameters" request_type="appnexus"
+		notice="disabled" truncate_domain="false" appnexus_member_id="2834" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" max_bid_time="55" custom_click="false" skip_ext_category="false"/>
+
+              <configuration:source id="spy" instantiate_type="url" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false"/>
+
+              <configuration:source id="rambler" instantiate_type="url" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="true" redirect="https://match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
               </configuration:source>
-              <configuration:source id="admixer" instantiate_type="body" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false" vast_instantiate_type="body">
+
+              <configuration:source id="adnetic" instantiate_type="body" request_type="openrtb"
+		notice="disabled" truncate_domain="false" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false"
+		native_instantiate_type="adm" native_impression_tracker_type="js" skip_ext_category="false"/>
+
+              <configuration:source id="mobfox" instantiate_type="body" notice="nurl"
+		truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false"
+		custom_click="false" native_instantiate_type="adm_native" native_impression_tracker_type="imp" skip_ext_category="false">
+                <configuration:userBind passback="true" redirect="https://match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
+              </configuration:source>
+
+              <configuration:source id="admixer" instantiate_type="body" notice="disabled"
+		truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false"
+		custom_click="false" skip_ext_category="false" vast_instantiate_type="body">
                 <!--
                 <configuration:userBind passback="false"
                   redirect="https://matching.mobilebanner.ru/p.gif?pid=target-qm&amp;id=##UNSIGNEDSSPUID=##&amp;rt=https%3A%2F%2Fmatch.targetrtb.com%2Fuserbind%3Fsrc%3Dqtm%26id%3D%25external_user_id%25"/>
                 -->
                 <configuration:userBind passback="false"
-                                        redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
+                  redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
                 <!--
                 <configuration:userBind passback="false"
                   redirect="https://match.targetrtb.com/userbind?src=bidvol&amp;pbf=1&amp;gi=1"/>
@@ -1036,27 +1116,30 @@ KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
                 <!--<configuration:userBind passback="false" redirect="//sync.dmp.otm-r.com/match/programmatic.img?id=##SSPUID=##&amp;fp=##mime-url:PUSH_DATA=##"/>-->
                 <!--<configuration:userBind passback="true" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>-->
               </configuration:source>
-              <configuration:source id="rocket10" instantiate_type="body" notice="nurl" truncate_domain="false" vast_instantiate_type="body" vast_notice="nurl" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="true" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1">
 
-                </configuration:userBind>
+              <configuration:source id="rocket10" instantiate_type="body" notice="nurl" truncate_domain="false" vast_instantiate_type="body" vast_notice="nurl"
+                fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="true" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
               </configuration:source>
-              <configuration:source id="decenterads" instantiate_type="body" notice="disabled" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" native_instantiate_type="adm" native_impression_tracker_type="imp" skip_ext_category="false">
-                <configuration:userBind passback="true" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1">
 
-                </configuration:userBind>
+              <configuration:source id="decenterads" instantiate_type="body" notice="disabled" truncate_domain="false" vast_instantiate_type="body" vast_notice="disabled"
+		fill_adid="false" ipw_extension="false" custom_click="false"
+		native_instantiate_type="adm" native_impression_tracker_type="imp" skip_ext_category="false">
+                <configuration:userBind passback="true" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
               </configuration:source>
-              <configuration:source id="pubnative" instantiate_type="body" notice="nurl" truncate_domain="false" vast_notice="nurl" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="true" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1">
 
-                </configuration:userBind>
+              <configuration:source id="pubnative" instantiate_type="body" notice="nurl" truncate_domain="false" vast_notice="nurl"
+                fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="true" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
               </configuration:source>
-              <configuration:source id="hyper" instantiate_type="body" notice="nurl" truncate_domain="false" vast_notice="nurl" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="true" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1">
 
-                </configuration:userBind>
+              <configuration:source id="hyper" instantiate_type="body" notice="nurl" truncate_domain="false" vast_notice="nurl"
+                fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="true" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1"/>
               </configuration:source>
-              <configuration:source id="anzu" instantiate_type="body" notice="nurl" truncate_domain="false" vast_notice="nurl" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+
+              <configuration:source id="anzu" instantiate_type="body" notice="nurl" truncate_domain="false" vast_notice="nurl"
+                fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
                 <configuration:userBind passback="true" redirect="//match.targetrtb.com/userbind?src=yandex&amp;pbf=1&amp;gi=1">
 
                 </configuration:userBind>
@@ -1079,16 +1162,19 @@ KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
                 <configuration:userBind passback="true" redirect="https://ad-blast.ru/userbind?src=adblast1&amp;pbf=1&amp;gi=1&amp;passback=https://www.acint.net/match%3Fdp=136%26euid=##mime-url:UNSIGNEDSSPUID=##">
                 </configuration:userBind>
               </configuration:source>
+
               <configuration:source id="ppush" instantiate_type="body" request_type="openrtb" notice="nurl" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" max_bid_time="150" custom_click="false" native_instantiate_type="adm" native_impression_tracker_type="resources" skip_ext_category="false">
                 <configuration:userBind passback="true">
 
                 </configuration:userBind>
               </configuration:source>
+
               <configuration:source id="pprofit" instantiate_type="body" notice="nurl" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" max_bid_time="200" custom_click="false" native_instantiate_type="adm" native_impression_tracker_type="imp" skip_ext_category="false">
                 <configuration:userBind passback="true">
 
                 </configuration:userBind>
               </configuration:source>
+
               <configuration:source id="moevideo"
                 instantiate_type="body"
                 request_type="openrtb"
@@ -1104,26 +1190,19 @@ KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
 
                 </configuration:userBind>
               </configuration:source>
+
               <configuration:source id="admedia" instantiate_type="body" request_type="openrtb" notice="nurl" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="true">
-
-                </configuration:userBind>
               </configuration:source>
-              <configuration:source id="pprofit_rb" instantiate_type="body" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="false" redirect="##PASSBACK_URL=##">
 
-                </configuration:userBind>
+              <configuration:source id="pprofit_rb" instantiate_type="body" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
+                <configuration:userBind passback="false" redirect="##PASSBACK_URL=##"/>
               </configuration:source>
               <configuration:source id="adviora" instantiate_type="body" notice="disabled" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" skip_ext_category="false">
-                <configuration:userBind passback="false">
-
-                </configuration:userBind>
               </configuration:source>
+
               <configuration:source id="datspush" instantiate_type="body" notice="nurl" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" native_instantiate_type="adm_native" native_impression_tracker_type="resources" skip_ext_category="false">
-                <configuration:userBind passback="true">
-
-                </configuration:userBind>
               </configuration:source>
+
               <configuration:source id="ezmob" instantiate_type="body" notice="nurl" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" native_instantiate_type="adm_native" native_impression_tracker_type="resources" skip_ext_category="false">
 
               </configuration:source>
@@ -1137,6 +1216,7 @@ KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
 
                 </configuration:userBind>
               </configuration:source>
+
               <configuration:source id="popunder" instantiate_type="body" notice="nurl" truncate_domain="false" vast_notice="disabled" fill_adid="false" ipw_extension="false" custom_click="false" native_instantiate_type="adm" native_impression_tracker_type="resources" skip_ext_category="false">
                 <configuration:userBind passback="false">
 
@@ -1452,7 +1532,24 @@ KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
               <configuration:adFCGINetworkParams port="10176" backlog="3000" accept_threads="15" keep_connections="300"/>
               <configuration:rtbFCGI1NetworkParams port="10177" mon_port="10277" backlog="3000" accept_threads="15" keep_connections="300"/>
               <configuration:rtbFCGI2NetworkParams port="10196" mon_port="10296" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:trackFCGINetworkParams port="10195" backlog="6000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI3NetworkParams port="10197" mon_port="10297" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI4NetworkParams port="10198" mon_port="10298" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI5NetworkParams port="10200" mon_port="10300" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI6NetworkParams port="10201" mon_port="10301" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI7NetworkParams port="10202" mon_port="10302" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI8NetworkParams port="10203" mon_port="10303" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI9NetworkParams port="10204" mon_port="10304" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI10NetworkParams port="10205" mon_port="10305" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI11NetworkParams port="10206" mon_port="10306" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI12NetworkParams port="10207" mon_port="10307" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI13NetworkParams port="10208" mon_port="10308" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI14NetworkParams port="10209" mon_port="10309" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI15NetworkParams port="10210" mon_port="10310" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI16NetworkParams port="10211" mon_port="10311" backlog="3000" accept_threads="15" keep_connections="300"/>
+
+              <configuration:trackFCGI1NetworkParams port="10195" backlog="6000" accept_threads="15" keep_connections="300"/>
+              <configuration:trackFCGI2NetworkParams port="10199" backlog="6000" accept_threads="15" keep_connections="300"/>
+
               <configuration:userBindFCGI1NetworkParams port="10178" backlog="6000" accept_threads="15" keep_connections="300"/>
               <configuration:userBindFCGI2NetworkParams port="10194" backlog="6000" accept_threads="15" keep_connections="300"/>
               <configuration:webServerParams timeout="3" server_limit="16" start_servers="1" max_clients="256000"/>
