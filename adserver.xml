@@ -11,6 +11,7 @@
 
   <host name="adfe100" hostName="adfe100"/>
   <host name="adfe101" hostName="adfe101"/>
+  <host name="adfe102" hostName="adfe102"/>
 
   <host name="adfe200" hostName="adfe200"/>
   <host name="adfe201" hostName="adfe201"/>
@@ -76,7 +77,7 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
 
             <configuration:virtualServer port="80"
               internal_port="10180"
-              mon_port="10380" nginx_index="3"
+              monitoring_port="10380" nginx_index="3"
               keep_alive="true" keep_alive_timeout="1" max_keep_alive_requests="10" proxy_protocol="false">
               <configuration:adservingDomain name="ad.targetrtb.com"/>
               <configuration:adservingDomain name="ad.targetrtb.ru"/>
@@ -106,14 +107,14 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
               <configuration:biddingDomain name="dsp.targetrtb.ru"/>
             </configuration:virtualServer>
 
-            <configuration:virtualServer port="80" internal_port="10183" mon_port="10381" nginx_index="2" keep_alive="true" keep_alive_timeout="1" max_keep_alive_requests="10" proxy_protocol="false">
+            <configuration:virtualServer port="80" internal_port="10183" monitoring_port="10381" nginx_index="2" keep_alive="true" keep_alive_timeout="1" max_keep_alive_requests="10" proxy_protocol="false">
               <configuration:adservingDomain name="match.targetrtb.com"/>
               <configuration:adservingDomain name="match.targetrtb.ru"/>
             </configuration:virtualServer>
 
             <configuration:secureVirtualServer port="443"
               internal_port="10145"
-              mon_port="10345" nginx_index="3"
+              monitoring_port="10345" nginx_index="3"
               keep_alive="true" keep_alive_timeout="5" max_keep_alive_requests="0" enable="true" proxy_protocol="false">
               <configuration:cert>
                 <configuration:content>-----BEGIN CERTIFICATE-----
@@ -519,7 +520,7 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
               <configuration:biddingDomain name="dsp.targetrtb.ru"/>
             </configuration:secureVirtualServer>
 
-            <configuration:secureVirtualServer port="443" internal_port="10148" mon_port="10346" nginx_index="2" keep_alive="true" keep_alive_timeout="1" max_keep_alive_requests="10" enable="true" proxy_protocol="false">
+            <configuration:secureVirtualServer port="443" internal_port="10148" monitoring_port="10346" nginx_index="2" keep_alive="true" keep_alive_timeout="1" max_keep_alive_requests="10" enable="true" proxy_protocol="false">
               <configuration:cert>
                 <configuration:content>-----BEGIN CERTIFICATE-----
 MIILMzCCChugAwIBAgISBg+6zLUzIc5KGxxDPGfgPsRwMA0GCSqGSIb3DQEBCwUA
@@ -1364,7 +1365,7 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
               <configuration:updateParams period="30" memory_size="100" chunks_count="32"/>
             </configuration:channelServer>
           </configuration:frontendCluster></configuration>
-        <service descriptor="AdCluster/FrontendSubCluster/CampaignManager" name="CampaignManager" host="adfe100 adfe101">
+        <service descriptor="AdCluster/FrontendSubCluster/CampaignManager" name="CampaignManager" host="adfe100 adfe101 adfe102">
           <configuration><configuration:campaignManager>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:threadParams min="400"/>
@@ -1372,7 +1373,7 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
               <configuration:statLogging flush_period="600" internal_logs_flush_period="600"/>
             </configuration:campaignManager></configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe100 adfe101">
+        <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe100 adfe101 adfe102">
           <configuration><configuration:userInfoManager>
               <configuration:networkParams port="10101"/>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
@@ -1390,7 +1391,7 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
               <configuration:controlParams status_check_period="10"/>
             </configuration:userInfoManagerController></configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/ChannelServer" name="ChannelServer" host="adfe100 adfe101">
+        <service descriptor="AdCluster/FrontendSubCluster/ChannelServer" name="ChannelServer" host="adfe100 adfe101 adfe102">
           <configuration><configuration:channelServer>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:threadParams min="200"/>
@@ -1403,7 +1404,7 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
             </configuration:channelController></configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe100 adfe101">
+        <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe100 adfe101 adfe102">
           <configuration><configuration:userBindServer user_dump_period="28800" user_seen_expire_time="604800" bind_request_expire_time="2073600" user_expire_time="62208000">
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="86400" trace_size_cleanup="104857600" trace_time_cleanup="14400"/>
               <configuration:threadParams min="100"/>
@@ -1412,30 +1413,46 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
         <service descriptor="AdCluster/FrontendSubCluster/UserBindController" name="UserBindController" host="adfe101">
           <configuration><configuration:userBindController/></configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/BillingServer" name="BillingServer" host="adfe100 adfe101">
+        <service descriptor="AdCluster/FrontendSubCluster/BillingServer" name="BillingServer" host="adfe100 adfe101 adfe102">
           <configuration><configuration:billingServer>
               <configuration:updateParams stat_update_period="3600" config_update_period="30" max_stat_delay="345600"/>
             </configuration:billingServer></configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/HttpFrontend" name="HttpFrontend" host="adfe100 adfe101">
+        <service descriptor="AdCluster/FrontendSubCluster/HttpFrontend" name="HttpFrontend" host="adfe100 adfe101 adfe102">
           <configuration><configuration:frontend>
               <configuration:adFCGINetworkParams port="10176" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI1NetworkParams port="10177" mon_port="10277" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI2NetworkParams port="10196" mon_port="10296" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI3NetworkParams port="10197" mon_port="10297" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI4NetworkParams port="10198" mon_port="10298" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI5NetworkParams port="10200" mon_port="10300" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI6NetworkParams port="10201" mon_port="10301" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI7NetworkParams port="10202" mon_port="10302" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI8NetworkParams port="10203" mon_port="10303" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI9NetworkParams port="10204" mon_port="10304" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI10NetworkParams port="10205" mon_port="10305" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI11NetworkParams port="10206" mon_port="10306" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI12NetworkParams port="10207" mon_port="10307" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI13NetworkParams port="10208" mon_port="10308" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI14NetworkParams port="10209" mon_port="10309" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI15NetworkParams port="10210" mon_port="10310" backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI16NetworkParams port="10211" mon_port="10311" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI1NetworkParams port="10177" monitoring_port="10277" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI2NetworkParams port="10196" monitoring_port="10296" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI3NetworkParams port="10197" monitoring_port="10297" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI4NetworkParams port="10198" monitoring_port="10298" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI5NetworkParams port="10200" monitoring_port="10300" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI6NetworkParams port="10201" monitoring_port="10301" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI7NetworkParams port="10202" monitoring_port="10302" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI8NetworkParams port="10203" monitoring_port="10303" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI9NetworkParams port="10204" monitoring_port="10304" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI10NetworkParams port="10205" monitoring_port="10305" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI11NetworkParams port="10206" monitoring_port="10306" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI12NetworkParams port="10207" monitoring_port="10307" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI13NetworkParams port="10208" monitoring_port="10308" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI14NetworkParams port="10209" monitoring_port="10309" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI15NetworkParams port="10210" monitoring_port="10310" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI16NetworkParams port="10211" monitoring_port="10311" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI17NetworkParams port="10212" monitoring_port="10312" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI18NetworkParams port="10213" monitoring_port="10313" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI19NetworkParams port="10214" monitoring_port="10314" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI20NetworkParams port="10215" monitoring_port="10315" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI21NetworkParams port="10216" monitoring_port="10316" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI22NetworkParams port="10217" monitoring_port="10317" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI23NetworkParams port="10218" monitoring_port="10318" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI24NetworkParams port="10219" monitoring_port="10319" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI25NetworkParams port="10220" monitoring_port="10320" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI26NetworkParams port="10221" monitoring_port="10321" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI27NetworkParams port="10222" monitoring_port="10322" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI28NetworkParams port="10223" monitoring_port="10323" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI29NetworkParams port="10224" monitoring_port="10324" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI30NetworkParams port="10225" monitoring_port="10325" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI31NetworkParams port="10226" monitoring_port="10326" backlog="3000" accept_threads="15" keep_connections="300"/>
+              <configuration:rtbFCGI32NetworkParams port="10227" monitoring_port="10327" backlog="3000" accept_threads="15" keep_connections="300"/>
 
               <configuration:trackFCGI1NetworkParams port="10195" backlog="6000" accept_threads="15" keep_connections="300"/>
               <configuration:trackFCGI2NetworkParams port="10199" backlog="6000" accept_threads="15" keep_connections="300"/>
@@ -1598,7 +1615,7 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
               </configuration:statLogging>
             </configuration:logGeneralizer></configuration>
         </service>
-        <service descriptor="AdCluster/BackendSubCluster/ExpressionMatcher" name="ExpressionMatcher" host="adbe01">
+        <service descriptor="AdCluster/BackendSubCluster/ExpressionMatcher" name="ExpressionMatcher" host="adbe01 adbe02">
           <configuration><configuration:expressionMatcher enable_channel_overlap_stats="false" positive_triggers_group_size="1" negative_triggers_group_size="0" max_trigger_visits="0" channel_match_cache_size="8589934592">
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:threadParams min="50"/>
@@ -1608,7 +1625,7 @@ uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA
               <configuration:storage min_free_space="0" max_inventory_undumped_size="15000" max_user_trigger_undumped_size="15000"/>
             </configuration:expressionMatcher></configuration>
         </service>
-        <service descriptor="AdCluster/BackendSubCluster/RequestInfoManager" name="RequestInfoManager" host="adbe01">
+        <service descriptor="AdCluster/BackendSubCluster/RequestInfoManager" name="RequestInfoManager" host="adbe01 adbe02">
           <configuration><configuration:requestInfoManager>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:processing threads="160" cache_blocks="1000"/>
