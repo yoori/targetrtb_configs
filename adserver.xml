@@ -1339,6 +1339,13 @@ iVDFanoCrMVIpQ59XWHkzdFmoHXHBV7oibVjGSO7ULSQ7MJ1Nz51phuDJSgAIU7A
               <configuration:controlParams status_check_period="10"/>
             </configuration:userInfoManagerController></configuration>
         </service>
+        <service descriptor="AdCluster/FrontendSubCluster/UserInfoController2" name="UserInfoController2" host="adfe101 adfe100">
+          <configuration><configuration:userInfoController2>
+            <configuration:networkParams/>
+            <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
+            <configuration:controlParams status_check_period="10"/>
+          </configuration:userInfoController2></configuration>
+        </service>
         <service descriptor="AdCluster/FrontendSubCluster/ChannelServer" name="ChannelServer" host="adfe100 adfe101 adfe102">
           <configuration><configuration:channelServer>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
@@ -1351,6 +1358,12 @@ iVDFanoCrMVIpQ59XWHkzdFmoHXHBV7oibVjGSO7ULSQ7MJ1Nz51phuDJSgAIU7A
               <configuration:networkParams/>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
             </configuration:channelController></configuration>
+        </service>
+        <service descriptor="AdCluster/FrontendSubCluster/ChannelController2" name="ChannelController2" host="adfe101 adfe100">
+          <configuration><configuration:channelController2>
+            <configuration:networkParams/>
+            <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
+          </configuration:channelController2></configuration>
         </service>
         <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe100 adfe101 adfe102">
           <configuration>
@@ -1382,58 +1395,27 @@ iVDFanoCrMVIpQ59XWHkzdFmoHXHBV7oibVjGSO7ULSQ7MJ1Nz51phuDJSgAIU7A
               <configuration:adFCGINetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
               <configuration:rtbFCGI1NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
               <configuration:rtbFCGI2NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI3NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI4NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI5NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI6NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI7NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI8NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI9NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI10NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI11NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI12NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI13NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI14NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI15NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI16NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI17NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI18NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI19NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI20NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI21NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI22NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI23NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI24NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI25NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI26NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI27NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI28NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI29NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI30NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI31NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbFCGI32NetworkParams backlog="3000" accept_threads="15" keep_connections="300"/>
 
               <configuration:trackFCGI1NetworkParams backlog="6000" accept_threads="15" keep_connections="300"/>
               <configuration:trackFCGI2NetworkParams backlog="6000" accept_threads="15" keep_connections="300"/>
 
               <configuration:userBindFCGI1NetworkParams backlog="6000" accept_threads="15" keep_connections="300"/>
-              <configuration:userBindFCGI2NetworkParams backlog="6000" accept_threads="15" keep_connections="300"/>
               <configuration:webServerParams timeout="3" server_limit="16" start_servers="1" max_clients="256000"/>
               <configuration:debugInfo use_acl="false" acl="" colocations="" show_history_profile="true"/>
               <configuration:requestModule set_uid="never" probe_uid="false" p3p_header="CP=&quot;NON COR PSAo PSDo OUR BUS UNI STA PRE&quot;">
                 <configuration:session timeout="30"/>
               </configuration:requestModule>
               <configuration:impressionModule/>
-              <configuration:clickModule threads="100" set_uid="true" probe_uid="false"/>
-              <configuration:actionModule set_uid="true" task_limit="1000" threads="200"/>
+              <configuration:clickModule threads="64" set_uid="true" probe_uid="false"/>
+              <configuration:actionModule set_uid="true" task_limit="1000" threads="64"/>
               <configuration:optoutModule enable="true"/>
               <configuration:pageSenseModule caching="max-age=86400"/>
-              <configuration:biddingModule max_bid_time="60" flush_period="10" threads="700">
+              <configuration:biddingModule max_bid_time="60" flush_period="10" threads="128">
                 <configuration:logging log_level="6"/>
               </configuration:biddingModule>
               <configuration:userBindModule
                 max_request_time="400"
-                threads="1000"
+                threads="64"
                 match_threads="100"
                 bind_pending_task_limit="300"
                 match_pending_task_limit="100"
@@ -1481,6 +1463,13 @@ iVDFanoCrMVIpQ59XWHkzdFmoHXHBV7oibVjGSO7ULSQ7MJ1Nz51phuDJSgAIU7A
               <configuration:controlParams status_check_period="10"/>
             </configuration:userInfoManagerController></configuration>
         </service>
+        <service descriptor="AdCluster/FrontendSubCluster/UserInfoController2" name="UserInfoController2" host="adfe201 adfe200">
+          <configuration><configuration:userInfoController2>
+            <configuration:networkParams/>
+            <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
+            <configuration:controlParams status_check_period="10"/>
+          </configuration:userInfoController2></configuration>
+        </service>
         <service descriptor="AdCluster/FrontendSubCluster/ChannelServer" name="ChannelServer" host="adfe200 adfe201">
           <configuration><configuration:channelServer>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
@@ -1493,6 +1482,12 @@ iVDFanoCrMVIpQ59XWHkzdFmoHXHBV7oibVjGSO7ULSQ7MJ1Nz51phuDJSgAIU7A
               <configuration:networkParams/>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
             </configuration:channelController></configuration>
+        </service>
+        <service descriptor="AdCluster/FrontendSubCluster/ChannelController2" name="ChannelController2" host="adfe201 adfe200">
+          <configuration><configuration:channelController2>
+            <configuration:networkParams/>
+            <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
+          </configuration:channelController2></configuration>
         </service>
         <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe200 adfe201">
           <configuration><configuration:userBindServer user_dump_period="28800" user_seen_expire_time="604800" bind_request_expire_time="2073600" user_expire_time="62208000">
@@ -1521,23 +1516,22 @@ iVDFanoCrMVIpQ59XWHkzdFmoHXHBV7oibVjGSO7ULSQ7MJ1Nz51phuDJSgAIU7A
               <configuration:rtbFCGI1NetworkParams backlog="3000" accept_threads="10" keep_connections="300"/>
               <configuration:rtbFCGI2NetworkParams backlog="3000" accept_threads="10" keep_connections="300"/>
               <configuration:userBindFCGI1NetworkParams backlog="6000" accept_threads="10" keep_connections="300"/>
-              <configuration:userBindFCGI2NetworkParams backlog="6000" accept_threads="10" keep_connections="300"/>
               <configuration:webServerParams timeout="3" server_limit="16" start_servers="1" max_clients="256000"/>
               <configuration:debugInfo use_acl="false" acl="" colocations="" show_history_profile="true"/>
               <configuration:requestModule set_uid="never" probe_uid="false" p3p_header="CP=&quot;NON COR PSAo PSDo OUR BUS UNI STA PRE&quot;">
                 <configuration:session timeout="30"/>
               </configuration:requestModule>
               <configuration:impressionModule/>
-              <configuration:clickModule threads="100" set_uid="true" probe_uid="false"/>
+              <configuration:clickModule threads="64" set_uid="true" probe_uid="false"/>
               <configuration:actionModule set_uid="true" task_limit="1000"/>
               <configuration:optoutModule enable="true"/>
               <configuration:pageSenseModule caching="max-age=86400"/>
-              <configuration:biddingModule max_bid_time="60" flush_period="10" threads="1000">
+              <configuration:biddingModule max_bid_time="60" flush_period="10" threads="128">
                 <configuration:logging log_level="6"/>
               </configuration:biddingModule>
               <configuration:userBindModule
                 max_request_time="400"
-                threads="1000"
+                threads="64"
                 match_threads="100"
                 bind_pending_task_limit="300"
                 match_pending_task_limit="100"
