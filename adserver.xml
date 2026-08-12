@@ -68,7 +68,8 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
             cache_root="/opt/foros/server/var/cache"
             data_root="/opt/foros/server/var/www"
             config_root="/opt/foros/server/etc"
-            cpu_affinity="auto"/>
+            cpu_affinity="auto"
+            ram_fs="rtbserver_ram_fs"/>
           <configuration:secureParams ca="ca.pem"/>
           <configuration:coloParams base_port="10100" backup_operations="false"
             enabled_countries="ru,in,kz,ge,by,uz,ua,tj,kg,am,az,md"
@@ -1476,24 +1477,25 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
         </configuration>
         <service descriptor="AdCluster/FrontendSubCluster/CampaignManager" name="CampaignManager" host="adfe100 adfe101 adfe102">
           <configuration>
-            <configuration:campaignManager billing_server_grpc_max_batch_delay_us="1000">
+            <configuration:campaignManager billing_server_grpc_max_batch_delay_us="1000" numa_node="1">
               <configuration:networkParams grpc_process_threads="16" grpc_max_sequential_ops="4"/>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:threadParams min="400"/>
               <configuration:updateParams update_period="300" ecpm_update_period="30" campaign_types="all"/>
-              <configuration:statLogging flush_period="600" internal_logs_flush_period="600" threads="4"/>
+              <configuration:statLogging flush_period="600" internal_logs_flush_period="600" threads="4"
+                use_ram="26843545600" min_free_space="5368709120"/>
             </configuration:campaignManager>
           </configuration>
         </service>
         <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe100 adfe101 adfe102">
           <configuration>
-            <configuration:userInfoManager>
+            <configuration:userInfoManager numa_node="1">
               <configuration:networkParams grpc_process_threads="10" grpc_max_sequential_ops="4"/>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:threadParams min="100"/>
               <configuration:updateParams update_period="300"/>
               <configuration:profilesCleanupParams life_time="15" temp_life_time="30" clean_time="00:01" clean_user_profiles="false"/>
-              <configuration:matchParams session_timeout="30" repeat_trigger_timeout="60" rocksdb_batching_threads="2"/>
+              <configuration:matchParams session_timeout="30" repeat_trigger_timeout="60" rocksdb_batching_threads="16"/>
               <configuration:storage min_free_space="0" max_add_undumped_size="300" max_temp_undumped_size="3072" max_history_undumped_size="2048" max_base_undumped_size="2048" max_freq_cap_undumped_size="3072"/>
             </configuration:userInfoManager>
           </configuration>
@@ -1509,7 +1511,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
         </service>
         <service descriptor="AdCluster/FrontendSubCluster/ChannelServer" name="ChannelServer" host="adfe100 adfe101 adfe102">
           <configuration>
-            <configuration:channelServer>
+            <configuration:channelServer numa_node="1">
               <configuration:networkParams grpc_process_threads="16" grpc_max_sequential_ops="4"/>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:threadParams min="200"/>
@@ -1527,11 +1529,11 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
         </service>
         <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe100 adfe101 adfe102">
           <configuration>
-            <configuration:userBindServer user_dump_period="28800"
+            <configuration:userBindServer numa_node="0" user_dump_period="28800"
               user_seen_expire_time="604800"
               bind_request_expire_time="2073600"
               user_expire_time="62208000"
-              rocksdb_batching_threads="2">
+              rocksdb_batching_threads="16">
               <configuration:networkParams grpc_process_threads="8" grpc_max_sequential_ops="4"/>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="86400" trace_size_cleanup="104857600" trace_time_cleanup="14400"/>
             </configuration:userBindServer>
@@ -1561,7 +1563,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               <configuration:rtbFCGI2NetworkParams backlog="3000" accept_threads="4" keep_connections="300"/>
               <configuration:trackFCGINetworkParams backlog="6000" accept_threads="15" keep_connections="300"/>
               <configuration:userBindFCGI1NetworkParams backlog="6000" accept_threads="15" keep_connections="300"/>
-              <configuration:rtbConfig threads="20" grpc_coalesce_threads="10"/>
+              <configuration:rtbConfig threads="20" grpc_coalesce_threads="10" numa_node="0"/>
               <configuration:webServerParams timeout="3" server_limit="8" start_servers="1" max_clients="256000"/>
               <configuration:debugInfo use_acl="false" acl="" colocations="" show_history_profile="true"/>
               <configuration:requestModule set_uid="never" probe_uid="false" p3p_header="CP=&quot;NON COR PSAo PSDo OUR BUS UNI STA PRE&quot;">
@@ -1575,9 +1577,11 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               <configuration:biddingModule max_bid_time="60" flush_period="10" process_coef="1.0" threads="20">
                 <configuration:logging log_level="6"/>
                 <configuration:processCoef coef="1.0">
+                  <!--
                   <configuration:interval from="07:00" to="11:00" coef="0.70"/>
                   <configuration:interval from="11:00" to="19:00" coef="0.60"/>
                   <configuration:interval from="19:00" to="20:00" coef="0.70"/>
+                  -->
                 </configuration:processCoef>
               </configuration:biddingModule>
               <configuration:userBindModule
@@ -1609,24 +1613,25 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
         </configuration>
         <service descriptor="AdCluster/FrontendSubCluster/CampaignManager" name="CampaignManager" host="adfe200 adfe201">
           <configuration>
-            <configuration:campaignManager billing_server_grpc_max_batch_delay_us="1000">
+            <configuration:campaignManager billing_server_grpc_max_batch_delay_us="1000" numa_node="1">
               <configuration:networkParams grpc_process_threads="16" grpc_max_sequential_ops="4"/>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:threadParams min="400"/>
               <configuration:updateParams update_period="300" ecpm_update_period="30" campaign_types="all"/>
-              <configuration:statLogging flush_period="600" internal_logs_flush_period="600" threads="4"/>
+              <configuration:statLogging flush_period="600" internal_logs_flush_period="600" threads="4"
+                use_ram="26843545600" min_free_space="5368709120"/>
             </configuration:campaignManager>
           </configuration>
         </service>
         <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe200 adfe201">
           <configuration>
-            <configuration:userInfoManager>
+            <configuration:userInfoManager numa_node="1">
               <configuration:networkParams grpc_process_threads="10" grpc_max_sequential_ops="4"/>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:threadParams min="100"/>
               <configuration:updateParams update_period="300"/>
               <configuration:profilesCleanupParams life_time="15" temp_life_time="30" clean_time="00:01" clean_user_profiles="false"/>
-              <configuration:matchParams session_timeout="30" repeat_trigger_timeout="60" rocksdb_batching_threads="2"/>
+              <configuration:matchParams session_timeout="30" repeat_trigger_timeout="60" rocksdb_batching_threads="16"/>
               <configuration:storage min_free_space="0" max_add_undumped_size="300" max_temp_undumped_size="3072" max_history_undumped_size="2048" max_base_undumped_size="2048" max_freq_cap_undumped_size="3072"/>
             </configuration:userInfoManager>
           </configuration>
@@ -1642,7 +1647,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
         </service>
         <service descriptor="AdCluster/FrontendSubCluster/ChannelServer" name="ChannelServer" host="adfe200 adfe201">
           <configuration>
-            <configuration:channelServer>
+            <configuration:channelServer numa_node="1">
               <configuration:networkParams grpc_process_threads="16" grpc_max_sequential_ops="4"/>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
               <configuration:threadParams min="200"/>
@@ -1658,7 +1663,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
         </service>
         <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe200 adfe201">
           <configuration>
-            <configuration:userBindServer user_dump_period="28800" user_seen_expire_time="604800" bind_request_expire_time="2073600" user_expire_time="62208000" rocksdb_batching_threads="2">
+            <configuration:userBindServer numa_node="0" user_dump_period="28800" user_seen_expire_time="604800" bind_request_expire_time="2073600" user_expire_time="62208000" rocksdb_batching_threads="16">
               <configuration:networkParams grpc_process_threads="8" grpc_max_sequential_ops="4"/>
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="86400" trace_size_cleanup="104857600" trace_time_cleanup="14400"/>
             </configuration:userBindServer>
@@ -1687,7 +1692,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               <configuration:rtbFCGI1NetworkParams backlog="3000" accept_threads="4" keep_connections="300"/>
               <configuration:rtbFCGI2NetworkParams backlog="3000" accept_threads="4" keep_connections="300"/>
               <configuration:userBindFCGI1NetworkParams backlog="6000" accept_threads="10" keep_connections="300"/>
-              <configuration:rtbConfig threads="20" grpc_coalesce_threads="10"/>
+              <configuration:rtbConfig threads="20" grpc_coalesce_threads="10" numa_node="0"/>
               <configuration:webServerParams timeout="3" server_limit="8" start_servers="1" max_clients="256000"/>
               <configuration:debugInfo use_acl="false" acl="" colocations="" show_history_profile="true"/>
               <configuration:requestModule set_uid="never" probe_uid="false" p3p_header="CP=&quot;NON COR PSAo PSDo OUR BUS UNI STA PRE&quot;">
@@ -1701,9 +1706,11 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               <configuration:biddingModule max_bid_time="60" flush_period="10" process_coef="1.0" threads="20">
                 <configuration:logging log_level="6"/>
                 <configuration:processCoef coef="1.0">
+                  <!--
                   <configuration:interval from="07:00" to="11:00" coef="0.70"/>
                   <configuration:interval from="11:00" to="19:00" coef="0.60"/>
                   <configuration:interval from="19:00" to="20:00" coef="0.70"/>
+                  -->
                 </configuration:processCoef>
               </configuration:biddingModule>
               <configuration:userBindModule
