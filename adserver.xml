@@ -1437,7 +1437,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
           <configuration:Cookies domain=".targetrtb.com" path="/">
             <configuration:Cookie name="OPTED_OUT" domain=".targetrtb.com" path="/" expires="157680000"/>
           </configuration:Cookies>
-          <configuration:inventoryStats simplifying="2" distrib_count="32"/>
+          <configuration:inventoryStats simplifying="0.5" distrib_count="32"/>
           <configuration:channelTriggerImpStats enable="false"/>
           <configuration:tagGroupStats enable="false"/>
           <configuration:snmpStats enable="true" monitoring_tag_id="12751" monitoring_country="ru" oid_suffix="0"/>
@@ -1738,6 +1738,11 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:logProcessing>
           </configuration>
         </serviceGroup>
+        <service descriptor="AdCluster/BackendSubCluster/ClickhouseUploader" name="ClickhouseUploaderDevel" host="adbe00">
+          <configuration>
+            <configuration:clickhouseUploader clickhouse_conn="-h postdb00"/>
+          </configuration>
+        </service>
         <service descriptor="AdCluster/BackendSubCluster/LogGeneralizer" name="LogGeneralizer" host="adbe00">
           <configuration>
             <configuration:logGeneralizer>
@@ -1771,6 +1776,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               negative_triggers_group_size="0"
               max_trigger_visits="0"
               channel_match_cache_size="8589934592"
+              rocksdb_batching_threads="16"
               grpc_max_batch_delay_us="3000">
               <configuration:logging
                 log_level="7"
@@ -1788,7 +1794,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
                 flush_period="300"
                 activity_flush_period="3600"
                 inventory_ecpm_flush_period="3600"/>
-              <configuration:processing threads="200" cache_blocks="0"/>
+              <configuration:processing threads="16" process_threads="48" cache_blocks="0"/>
               <configuration:storage
                 min_free_space="0" max_inventory_undumped_size="15000" max_user_trigger_undumped_size="15000"/>
             </configuration:expressionMatcher>
@@ -1796,7 +1802,9 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
         </service>
         <service descriptor="AdCluster/BackendSubCluster/RequestInfoManager" name="RequestInfoManager" host="adbe01 adbe02">
           <configuration>
-            <configuration:requestInfoManager grpc_max_batch_delay_us="3000">
+            <configuration:requestInfoManager
+              rocksdb_batching_threads="16"
+              grpc_max_batch_delay_us="3000">
               <configuration:logging
                 log_level="7"
                 sys_log="true"
@@ -1806,7 +1814,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
                 error_time_cleanup="10080"
                 trace_size_cleanup="104857600"
                 trace_time_cleanup="10080"/>
-              <configuration:processing threads="160" cache_blocks="1000"/>
+              <configuration:processing threads="64" cache_blocks="1000"/>
               <configuration:profiling sending_window="3600" max_pool_size="40000000"/>
             </configuration:requestInfoManager></configuration>
         </service>
@@ -1824,14 +1832,32 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               <configuration:updateParams primary="true" update_period="600" bill_stat_update_period="3600" stat_sync_period="3600" ecpm_update_period="600"/>
             </configuration:campaignServer></configuration>
         </service>
-        <service descriptor="AdCluster/BackendSubCluster/Predictor" name="Predictor" host="adbe00">
+        <service descriptor="AdCluster/BackendSubCluster/CTRPredictModelGenerator" name="CTRPredictModelGenerator" host="adbe01">
           <configuration>
-            <configuration:predictor log_days_to_keep="90">
-              <configuration:syncServer enable_backup="false">
+            <configuration:ctrPredictModelGenerator
+              generate_period="86400"
+              data_delay="86400"
+              selection_chunk_rows="105000000"
+              main_chunk_rows="150000000"
+              validation_set_rows="3000000">
+              <configuration:syncServer>
                 <configuration:networkParams/>
               </configuration:syncServer>
+            </configuration:ctrPredictModelGenerator>
+          </configuration>
+        </service>
+        <service descriptor="AdCluster/BackendSubCluster/CTRPredictModelViewer" name="CTRPredictModelViewer" host="adbe00">
+          <configuration>
+            <configuration:ctrPredictModelViewer url_path="/ctr/">
+              <configuration:networkParams/>
+            </configuration:ctrPredictModelViewer>
+          </configuration>
+        </service>
+        <service descriptor="AdCluster/BackendSubCluster/BidCostPredictModelGenerator" name="BidCostPredictModelGenerator" host="adbe00">
+          <configuration>
+            <configuration:bidCostPredictModelGenerator log_days_to_keep="90">
               <configuration:merger max_timeout="0" sleep_timeout="300"/>
-            </configuration:predictor>
+            </configuration:bidCostPredictModelGenerator>
           </configuration>
         </service>
       </serviceGroup>
