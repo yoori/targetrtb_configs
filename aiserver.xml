@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<colo:colocation
+  name="targetrtb"
+  description="TargetRTB AI cluster"
+  xmlns:colo="http://www.foros.com/cms/colocation"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.foros.com/cms/colocation platform:/resource/coloModel/src/main/model/colocation.xsd">
+  <host name="nvidia01" hostName="nvidia01"/>
+
+  <application descriptor="AIServer-1.0.0.0">
+    <configuration>
+      <environment
+        xmlns="http://www.adintelligence.net/xsd/AI/Configuration"
+        autorestart="true">
+        <forosZoneManagement
+          user_name="aduser"
+          user_group="adgroup"
+          ssh_key="/home/jurij_kuznecov/.ssh/adkey"/>
+      </environment>
+    </configuration>
+
+    <serviceGroup descriptor="AICluster" name="AICluster">
+      <configuration>
+        <cluster xmlns="http://www.adintelligence.net/xsd/AI/Configuration">
+          <environment cuda_visible_devices="0"/>
+        </cluster>
+      </configuration>
+
+      <service
+        descriptor="AICluster/AIAgent"
+        name="AIAgent"
+        host="nvidia01">
+        <configuration>
+          <aiAgent
+            xmlns="http://www.adintelligence.net/xsd/AI/Configuration"
+            model="qwen3"
+            port="11434"
+            agent_port="11435"
+            browser_proxy_server="http://185.168.29.214:8085"
+            web_proxy_server="http://185.168.29.214:8085"
+            postgres_connection_string="host=postdb00 port=5432 dbname=stat user=ro password=Q1oL6mm5hPTjnDQ"
+            clickhouse_url="http://postdb00:8123"
+            max_tool_calls="64"/>
+        </configuration>
+      </service>
+
+      <service
+        descriptor="AICluster/SegmentGenerator"
+        name="SegmentGenerator"
+        host="nvidia01">
+        <configuration>
+          <segmentGenerator
+            xmlns="http://www.adintelligence.net/xsd/AI/Configuration"
+            clickhouse_url="http://postdb00:8123"
+            source_rows="10000"
+            source_batch_rows="128"
+            profile_workers="16"
+            parallelism="10"
+            http_timeout="120"
+            data_lag_days="1"
+            training_period="604800"
+            retry_period="300"
+            device="cuda">
+            <userNavigationProfileEndpoint url="http://adbe01:10713"/>
+            <userNavigationProfileEndpoint url="http://adbe02:10713"/>
+          </segmentGenerator>
+        </configuration>
+      </service>
+
+      <service
+        descriptor="AICluster/SegmentModelViewer"
+        name="SegmentModelViewer"
+        host="nvidia01">
+        <configuration>
+          <segmentModelViewer
+            xmlns="http://www.adintelligence.net/xsd/AI/Configuration"
+            port="11437"/>
+        </configuration>
+      </service>
+    </serviceGroup>
+  </application>
+</colo:colocation>

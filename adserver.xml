@@ -1814,6 +1814,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
                 error_time_cleanup="10080"
                 trace_size_cleanup="104857600"
                 trace_time_cleanup="10080"/>
+              <configuration:requestProcessing expire_time="259200"/>
               <configuration:processing threads="64" cache_blocks="1000"/>
               <configuration:profiling sending_window="3600" max_pool_size="40000000"/>
             </configuration:requestInfoManager></configuration>
@@ -1846,7 +1847,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:ctrPredictModelGenerator>
           </configuration>
         </service>
-        <service descriptor="AdCluster/BackendSubCluster/CTRPredictModelViewer" name="CTRPredictModelViewer" host="adbe00">
+        <service descriptor="AdCluster/BackendSubCluster/CTRPredictModelViewer" name="CTRPredictModelViewer" host="adbe01">
           <configuration>
             <configuration:ctrPredictModelViewer url_path="/ctr/">
               <configuration:networkParams/>
