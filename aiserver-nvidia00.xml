@@ -6,7 +6,7 @@
   xmlns:colo="http://www.foros.com/cms/colocation"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.foros.com/cms/colocation platform:/resource/coloModel/src/main/model/colocation.xsd">
-  <host name="nvidia01" hostName="nvidia01"/>
+  <host name="nvidia00" hostName="nvidia00"/>
 
   <application descriptor="AIServer-1.0.0.0">
     <configuration>
@@ -58,7 +58,7 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
       <service
         descriptor="AICluster/AIAgent"
         name="AIAgent"
-        host="nvidia01">
+        host="nvidia00">
         <configuration>
           <aiAgent
             xmlns="http://www.adintelligence.net/xsd/AI/Configuration"
@@ -75,7 +75,7 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
       <service
         descriptor="AICluster/SegmentGenerator"
         name="SegmentGenerator"
-        host="nvidia01">
+        host="nvidia00">
         <configuration>
           <segmentGenerator
             xmlns="http://www.adintelligence.net/xsd/AI/Configuration"
@@ -83,10 +83,8 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
             training_period="604800"
             retry_period="300">
             <run name="normal">
-              <generateHistoricalParams
+              <generateContextParams
                 train_rows="800000"
-                user_navigation_sampling="50"
-                profile_workers="16"
                 parallelism="8"
                 trials="8"
                 trial_batch_workers="8"
@@ -95,11 +93,7 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
                 trial_batch_pool_size="1"
                 clickhouse_fetch_rows="200064"
                 data_delay="86400"
-                device="cuda">
-                <userNavigationProfileEndpoint url="http://adbe01:10713"/>
-                <userNavigationProfileEndpoint url="http://adbe02:10713"/>
-                <excludedNavigationDomain name="ad.targetrtb.com"/>
-              </generateHistoricalParams>
+                device="cuda"/>
             </run>
           </segmentGenerator>
         </configuration>
@@ -108,11 +102,11 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
       <service
         descriptor="AICluster/SegmentModelBackend"
         name="SegmentModelBackend"
-        host="nvidia01">
+        host="nvidia00">
         <configuration>
           <segmentModelBackend
             xmlns="http://www.adintelligence.net/xsd/AI/Configuration"
-            id="nvidia01"
+            id="nvidia00"
             port="11438"/>
         </configuration>
       </service>

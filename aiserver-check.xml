@@ -82,9 +82,9 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
             clickhouse_url="http://postdb00:8123"
             training_period="604800"
             retry_period="300">
-            <run name="normal">
+            <run name="check">
               <generateHistoricalParams
-                train_rows="800000"
+                train_rows="24000"
                 user_navigation_sampling="50"
                 profile_workers="16"
                 parallelism="8"

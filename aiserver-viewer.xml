@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <colo:colocation
-  name="targetrtb"
-  description="TargetRTB AI cluster"
+  name="targetrtb-ai-viewer"
+  description="TargetRTB AI model viewer"
   xmlns:colo="http://www.foros.com/cms/colocation"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.foros.com/cms/colocation platform:/resource/coloModel/src/main/model/colocation.xsd">
@@ -51,69 +51,28 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
     <serviceGroup descriptor="AICluster" name="AICluster">
       <configuration>
         <cluster xmlns="http://www.adintelligence.net/xsd/AI/Configuration">
-          <environment cuda_visible_devices="0"/>
+          <environment/>
         </cluster>
       </configuration>
 
       <service
-        descriptor="AICluster/AIAgent"
-        name="AIAgent"
+        descriptor="AICluster/SegmentModelViewer"
+        name="SegmentModelViewer"
         host="nvidia01">
         <configuration>
-          <aiAgent
+          <segmentModelViewer
             xmlns="http://www.adintelligence.net/xsd/AI/Configuration"
-            model="qwen3"
-            port="11434"
-            agent_port="11435"
-            proxy_server="http://185.168.29.214:8085"
-            postgres_connection_string="host=postdb00 port=5432 dbname=stat user=ro password=Q1oL6mm5hPTjnDQ"
-            clickhouse_url="http://postdb00:8123"
-            max_tool_calls="64"/>
-        </configuration>
-      </service>
-
-      <service
-        descriptor="AICluster/SegmentGenerator"
-        name="SegmentGenerator"
-        host="nvidia01">
-        <configuration>
-          <segmentGenerator
-            xmlns="http://www.adintelligence.net/xsd/AI/Configuration"
-            clickhouse_url="http://postdb00:8123"
-            training_period="604800"
-            retry_period="300">
-            <run name="normal">
-              <generateHistoricalParams
-                train_rows="800000"
-                user_navigation_sampling="50"
-                profile_workers="16"
-                parallelism="8"
-                trials="8"
-                trial_batch_workers="8"
-                trial_ready_batches="16"
-                trial_trainer_ready_batches="8"
-                trial_batch_pool_size="1"
-                clickhouse_fetch_rows="200064"
-                data_delay="86400"
-                device="cuda">
-                <userNavigationProfileEndpoint url="http://adbe01:10713"/>
-                <userNavigationProfileEndpoint url="http://adbe02:10713"/>
-                <excludedNavigationDomain name="ad.targetrtb.com"/>
-              </generateHistoricalParams>
-            </run>
-          </segmentGenerator>
-        </configuration>
-      </service>
-
-      <service
-        descriptor="AICluster/SegmentModelBackend"
-        name="SegmentModelBackend"
-        host="nvidia01">
-        <configuration>
-          <segmentModelBackend
-            xmlns="http://www.adintelligence.net/xsd/AI/Configuration"
-            id="nvidia01"
-            port="11438"/>
+            port="11437"
+            request_timeout="10">
+            <backend
+              id="nvidia00"
+              name="nvidia00"
+              url="http://nvidia00:11438"/>
+            <backend
+              id="nvidia01"
+              name="nvidia01"
+              url="http://nvidia01:11438"/>
+          </segmentModelViewer>
         </configuration>
       </service>
     </serviceGroup>
