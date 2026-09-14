@@ -1770,7 +1770,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
         </service>
         <service descriptor="AdCluster/BackendSubCluster/YandexPostClickImporter" name="YandexPostClickImporter" host="adbe01">
           <configuration>
-            <configuration:yandexPostClickImporter sources="genius,pml,pharmatic">
+            <configuration:yandexPostClickImporter>
               <configuration:clickhouse host="postdb00"/>
             </configuration:yandexPostClickImporter>
           </configuration>
@@ -1880,6 +1880,20 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
                 <configuration:networkParams/>
               </configuration:syncServer>
             </configuration:ctrPredictModelGenerator>
+          </configuration>
+        </service>
+        <service
+          descriptor="AdCluster/BackendSubCluster/VTRPredictModelGenerator"
+          name="VTRPredictModelGenerator"
+          host="adbe01">
+          <configuration>
+            <configuration:vtrPredictModelGenerator
+              generate_period="86400"
+              data_delay="86400"
+              ctr_generator_workers="8"
+              selection_chunk_rows="105000000"
+              main_chunk_rows="150000000"
+              validation_set_rows="3000000"/>
           </configuration>
         </service>
         <service
