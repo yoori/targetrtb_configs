@@ -47,6 +47,15 @@ nfjcKx74Gkpp71s4yNHUAH90nmuVW24uWPaoHT2qOLbgw2/axQ8=
           <descriptor:autorestart>true</descriptor:autorestart>
         </descriptor:ForosManager>
 
+        <descriptor:ClickHouse>
+          <descriptor:ConfigDir>/opt/foros/clickhouse/etc</descriptor:ConfigDir>
+          <descriptor:DataDir>/u01/foros/clickhouse/var</descriptor:DataDir>
+          <descriptor:ListenHost>0.0.0.0</descriptor:ListenHost>
+          <descriptor:HttpPort>8123</descriptor:HttpPort>
+          <descriptor:TcpPort>9000</descriptor:TcpPort>
+          <descriptor:InterserverHttpPort>9009</descriptor:InterserverHttpPort>
+        </descriptor:ClickHouse>
+
       </descriptor:configuration>
     </configuration>
 
@@ -229,7 +238,7 @@ effective_io_concurrency = 16		# 1-1000; 0 disables prefetching
 
 # - Settings -
 
-wal_level = hot_standby			# minimal, archive, hot_standby, or logical
+wal_level = archive #hot_standby	# minimal, archive, hot_standby, or logical
 					# (change requires restart)
 #fsync = on				# turns forced synchronization on or off
 #synchronous_commit = on		# synchronization level;
@@ -278,7 +287,7 @@ archive_command = 'cp %p /opt/foros/pgadm/var/spool/%f &amp;&amp; chmod a+r /opt
 
 # Set these on the master and on any standby that will send replication data.
 
-max_wal_senders = 3		# max number of walsender processes
+max_wal_senders = 0 #3		# max number of walsender processes
 				# (change requires restart)
 #wal_keep_segments = 0		# in logfile segments, 16MB each; 0 disables
 #wal_sender_timeout = 60s	# in milliseconds; 0 disables
