@@ -51,7 +51,7 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
     <serviceGroup descriptor="AICluster" name="AICluster">
       <configuration>
         <cluster xmlns="http://www.adintelligence.net/xsd/AI/Configuration">
-          <environment cuda_visible_devices="0"/>
+          <environment/>
         </cluster>
       </configuration>
 
@@ -63,6 +63,7 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
           <aiAgent
             xmlns="http://www.adintelligence.net/xsd/AI/Configuration"
             model="qwen3"
+            cuda_visible_devices="0"
             port="11434"
             agent_port="11435"
             proxy_server="http://185.168.29.214:8085"
@@ -82,9 +83,10 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
             clickhouse_url="http://postdb00:8123"
             training_period="604800"
             retry_period="300">
+            <cudaDevice index="0" memory_limit_mib="32768"/>
             <run name="check">
               <generateHistoricalParams
-                train_rows="24000"
+                train_rows="48000"
                 user_navigation_sampling="50"
                 profile_workers="16"
                 parallelism="8"
@@ -93,7 +95,7 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
                 trial_ready_batches="16"
                 trial_trainer_ready_batches="8"
                 trial_batch_pool_size="1"
-                clickhouse_fetch_rows="200064"
+                clickhouse_fetch_rows="500000"
                 data_delay="86400"
                 device="cuda">
                 <userNavigationProfileEndpoint url="http://adbe01:10713"/>

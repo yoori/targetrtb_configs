@@ -12,9 +12,12 @@
   <host name="adfe100" hostName="adfe100"/>
   <host name="adfe101" hostName="adfe101"/>
   <host name="adfe102" hostName="adfe102"/>
+  <host name="adfe103" hostName="adfe103"/>
 
   <host name="adfe200" hostName="adfe200"/>
   <host name="adfe201" hostName="adfe201"/>
+  <host name="adfe202" hostName="adfe202"/>
+  <host name="adfe203" hostName="adfe203"/>
 
   <application descriptor="AdServer-4.0.0.19" name="AdServer" description="">
     <configuration>
@@ -1437,8 +1440,8 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
           <configuration:Cookies domain=".targetrtb.com" path="/">
             <configuration:Cookie name="OPTED_OUT" domain=".targetrtb.com" path="/" expires="157680000"/>
           </configuration:Cookies>
-          <configuration:inventoryStats simplifying="0.5" distrib_count="32"/>
-          <configuration:userNavigation sampling="50"/>
+          <configuration:inventoryStats simplifying="0.2" distrib_count="32"/>
+          <configuration:userNavigation sampling="25"/>
           <configuration:channelTriggerImpStats enable="false"/>
           <configuration:tagGroupStats enable="false"/>
           <configuration:snmpStats enable="true" monitoring_tag_id="12751" monitoring_country="ru" oid_suffix="0"/>
@@ -1476,7 +1479,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:channelServer>
           </configuration:frontendCluster>
         </configuration>
-        <service descriptor="AdCluster/FrontendSubCluster/CampaignManager" name="CampaignManager" host="adfe100 adfe101 adfe102">
+        <service descriptor="AdCluster/FrontendSubCluster/CampaignManager" name="CampaignManager" host="adfe100 adfe101 adfe102 adfe103">
           <configuration>
             <configuration:campaignManager billing_server_grpc_max_batch_delay_us="1000" numa_node="1">
               <configuration:networkParams
@@ -1491,7 +1494,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:campaignManager>
           </configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe100 adfe101 adfe102">
+        <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe100 adfe101 adfe102 adfe103">
           <configuration>
             <configuration:userInfoManager numa_node="1">
               <configuration:networkParams
@@ -1516,7 +1519,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:userInfoController>
           </configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/ChannelServer" name="ChannelServer" host="adfe100 adfe101 adfe102">
+        <service descriptor="AdCluster/FrontendSubCluster/ChannelServer" name="ChannelServer" host="adfe100 adfe101 adfe102 adfe103">
           <configuration>
             <configuration:channelServer numa_node="1">
               <configuration:networkParams
@@ -1537,7 +1540,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:channelController>
           </configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe100 adfe101 adfe102">
+        <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe100 adfe101 adfe102 adfe103">
           <configuration>
             <configuration:userBindServer numa_node="0" user_dump_period="28800"
               user_seen_expire_time="604800"
@@ -1555,7 +1558,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
         <service descriptor="AdCluster/FrontendSubCluster/UserBindController" name="UserBindController" host="adfe101">
           <configuration><configuration:userBindController/></configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/BillingServer" name="BillingServer" host="adfe100 adfe101 adfe102">
+        <service descriptor="AdCluster/FrontendSubCluster/BillingServer" name="BillingServer" host="adfe100 adfe101 adfe102 adfe103">
           <configuration>
             <configuration:billingServer>
               <configuration:networkParams grpc_max_sequential_ops="4"/>
@@ -1563,7 +1566,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:billingServer>
           </configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/HttpFrontend" name="HttpFrontend" host="adfe100 adfe101 adfe102">
+        <service descriptor="AdCluster/FrontendSubCluster/HttpFrontend" name="HttpFrontend" host="adfe100 adfe101 adfe102 adfe103">
           <configuration>
             <configuration:frontend
               grpc_max_batch_delay_us="1000"
@@ -1624,7 +1627,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:channelServer>
           </configuration:frontendCluster>
         </configuration>
-        <service descriptor="AdCluster/FrontendSubCluster/CampaignManager" name="CampaignManager" host="adfe200 adfe201">
+        <service descriptor="AdCluster/FrontendSubCluster/CampaignManager" name="CampaignManager" host="adfe200 adfe201 adfe202 adfe203">
           <configuration>
             <configuration:campaignManager billing_server_grpc_max_batch_delay_us="1000" numa_node="1">
               <configuration:networkParams
@@ -1639,7 +1642,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:campaignManager>
           </configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe200 adfe201">
+        <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe200 adfe201 adfe202 adfe203">
           <configuration>
             <configuration:userInfoManager numa_node="1">
               <configuration:networkParams
@@ -1664,7 +1667,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:userInfoController>
           </configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/ChannelServer" name="ChannelServer" host="adfe200 adfe201">
+        <service descriptor="AdCluster/FrontendSubCluster/ChannelServer" name="ChannelServer" host="adfe200 adfe201 adfe202 adfe203">
           <configuration>
             <configuration:channelServer numa_node="1">
               <configuration:networkParams
@@ -1683,7 +1686,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
             </configuration:channelController></configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe200 adfe201">
+        <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe200 adfe201 adfe202 adfe203">
           <configuration>
             <configuration:userBindServer numa_node="0" user_dump_period="28800" user_seen_expire_time="604800" bind_request_expire_time="2073600" user_expire_time="62208000" rocksdb_batching_threads="16">
               <configuration:networkParams
@@ -1697,7 +1700,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
         <service descriptor="AdCluster/FrontendSubCluster/UserBindController" name="UserBindController" host="adfe201">
           <configuration><configuration:userBindController/></configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/BillingServer" name="BillingServer" host="adfe200 adfe201">
+        <service descriptor="AdCluster/FrontendSubCluster/BillingServer" name="BillingServer" host="adfe200 adfe201 adfe202 adfe203">
           <configuration>
             <configuration:billingServer>
               <configuration:networkParams grpc_max_sequential_ops="4"/>
@@ -1705,7 +1708,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:billingServer>
           </configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/HttpFrontend" name="HttpFrontend" host="adfe200 adfe201">
+        <service descriptor="AdCluster/FrontendSubCluster/HttpFrontend" name="HttpFrontend" host="adfe200 adfe201 adfe202 adfe203">
           <configuration>
             <configuration:frontend
               grpc_max_batch_delay_us="1000"
