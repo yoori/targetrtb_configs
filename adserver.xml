@@ -84,7 +84,7 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
             max_bad_SSPID_events="1"
             ip_key="MFBOeuplH3LlQqfGSvNiew.."
             ssp_uid_key="EB9D65067D8CF903" intervalsBlacklist="" skip_external_ids="">
-            <configuration:virtualServer port="80"
+            <configuration:virtualServer externalAddress="185.115.92.102" port="80"
               internal_port="10180"
               monitoring_port="10380"
               keep_alive="true" keep_alive_timeout="1" max_keep_alive_requests="10" proxy_protocol="false">
@@ -94,7 +94,7 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
               <configuration:videoDomain name="vast.targetrtb.com"/>
               <configuration:videoDomain name="vast.targetrtb.ru"/>
             </configuration:virtualServer>
-            <configuration:virtualServer port="80"
+            <configuration:virtualServer externalAddress="185.115.92.104" port="80"
               internal_port="10182"
               keep_alive="true" keep_alive_timeout="1" max_keep_alive_requests="10" proxy_protocol="false">
               <configuration:adservingDomain name="ad.targetrtb.com"/>
@@ -105,15 +105,19 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
               <configuration:thirdPartyContentDomain name="media.targetrtb.ru"/>
               <configuration:videoDomain name="video.targetrtb.com"/>
             </configuration:virtualServer>
-            <configuration:virtualServer port="80" internal_port="10181" keep_alive="true" keep_alive_timeout="20" max_keep_alive_requests="10000" proxy_protocol="false">
+            <configuration:virtualServer externalAddress="185.115.92.103"
+              port="80" internal_port="10181" keep_alive="true" keep_alive_timeout="20"
+              max_keep_alive_requests="10000" proxy_protocol="false">
               <configuration:biddingDomain name="dsp.targetrtb.com"/>
               <configuration:biddingDomain name="dsp.targetrtb.ru"/>
             </configuration:virtualServer>
-            <configuration:virtualServer port="80" internal_port="10183" monitoring_port="10381" keep_alive="true" keep_alive_timeout="1" max_keep_alive_requests="10" proxy_protocol="false">
+            <configuration:virtualServer externalAddress="185.115.92.105"
+              port="80" internal_port="10183" monitoring_port="10381" keep_alive="true"
+              keep_alive_timeout="1" max_keep_alive_requests="10" proxy_protocol="false">
               <configuration:adservingDomain name="match.targetrtb.com"/>
               <configuration:adservingDomain name="match.targetrtb.ru"/>
             </configuration:virtualServer>
-            <configuration:secureVirtualServer port="443"
+            <configuration:secureVirtualServer externalAddress="185.115.92.102" port="443"
               internal_port="10145"
               monitoring_port="10345"
               keep_alive="true" keep_alive_timeout="5" max_keep_alive_requests="0" enable="true" proxy_protocol="false">
@@ -276,7 +280,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               <configuration:videoDomain name="vast.targetrtb.ru"/>
             </configuration:secureVirtualServer>
 
-            <configuration:secureVirtualServer
+            <configuration:secureVirtualServer externalAddress="185.115.92.104"
               port="443"
               internal_port="10147"
               keep_alive="true"
@@ -443,7 +447,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               <configuration:videoDomain name="video.targetrtb.com"/>
             </configuration:secureVirtualServer>
 
-            <configuration:secureVirtualServer
+            <configuration:secureVirtualServer externalAddress="185.115.92.103"
               port="443"
               internal_port="10146"
               keep_alive="true"
@@ -602,7 +606,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               <configuration:biddingDomain name="dsp.targetrtb.com"/>
               <configuration:biddingDomain name="dsp.targetrtb.ru"/>
             </configuration:secureVirtualServer>
-            <configuration:secureVirtualServer
+            <configuration:secureVirtualServer externalAddress="185.115.92.105"
               port="443"
               internal_port="10148"
               monitoring_port="10346"
@@ -1437,6 +1441,17 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               <configuration:match topic="match" threads="20" message_queue_size="100000"/>
             </configuration:kafkaStorage>
           </configuration:coloParams>
+          <configuration:frontendNetwork>
+            <configuration:defaultRoute gateway="185.115.92.97" onlink="true"/>
+            <configuration:host name="adfe100" interface="eno5" arp_source_ip="192.168.10.3"/>
+            <configuration:host name="adfe101" interface="eno5" arp_source_ip="192.168.10.12"/>
+            <configuration:host name="adfe102" interface="eth5" arp_source_ip="192.168.10.13"/>
+            <configuration:host name="adfe103" interface="eno5" arp_source_ip="192.168.10.24"/>
+            <configuration:host name="adfe200" interface="eno5" arp_source_ip="192.168.10.2"/>
+            <configuration:host name="adfe201" interface="eno5" arp_source_ip="192.168.10.14"/>
+            <configuration:host name="adfe202" interface="eno5" arp_source_ip="192.168.10.25"/>
+            <configuration:host name="adfe203" interface="eno5" arp_source_ip="192.168.10.26"/>
+          </configuration:frontendNetwork>
           <configuration:Cookies domain=".targetrtb.com" path="/">
             <configuration:Cookie name="OPTED_OUT" domain=".targetrtb.com" path="/" expires="157680000"/>
           </configuration:Cookies>
@@ -1494,7 +1509,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:campaignManager>
           </configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe100 adfe101 adfe102 adfe103">
+        <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe100 adfe101 adfe102">
           <configuration>
             <configuration:userInfoManager numa_node="1">
               <configuration:networkParams
@@ -1505,7 +1520,31 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               <configuration:threadParams min="100"/>
               <configuration:updateParams update_period="300"/>
               <configuration:profilesCleanupParams life_time="15" temp_life_time="30" clean_time="00:01" clean_user_profiles="false"/>
-              <configuration:matchParams session_timeout="30" repeat_trigger_timeout="60" rocksdb_batching_threads="16"/>
+              <configuration:matchParams
+                session_timeout="30"
+                repeat_trigger_timeout="60"
+                rocksdb_batching_threads="16"
+                rocksdb_cache_size="42949672960"/>
+              <configuration:storage min_free_space="0" max_add_undumped_size="300" max_temp_undumped_size="3072" max_history_undumped_size="2048" max_base_undumped_size="2048" max_freq_cap_undumped_size="3072"/>
+            </configuration:userInfoManager>
+          </configuration>
+        </service>
+        <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe103">
+          <configuration>
+            <configuration:userInfoManager numa_node="1">
+              <configuration:networkParams
+                grpc_process_threads="10"
+                grpc_threads_per_cq="4"
+                grpc_max_sequential_ops="4"/>
+              <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
+              <configuration:threadParams min="100"/>
+              <configuration:updateParams update_period="300"/>
+              <configuration:profilesCleanupParams life_time="15" temp_life_time="30" clean_time="00:01" clean_user_profiles="false"/>
+              <configuration:matchParams
+                session_timeout="30"
+                repeat_trigger_timeout="60"
+                rocksdb_batching_threads="16"
+                rocksdb_cache_size="0"/>
               <configuration:storage min_free_space="0" max_add_undumped_size="300" max_temp_undumped_size="3072" max_history_undumped_size="2048" max_base_undumped_size="2048" max_freq_cap_undumped_size="3072"/>
             </configuration:userInfoManager>
           </configuration>
@@ -1540,13 +1579,30 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:channelController>
           </configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe100 adfe101 adfe102 adfe103">
+        <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe100 adfe101 adfe102">
           <configuration>
             <configuration:userBindServer numa_node="0" user_dump_period="28800"
               user_seen_expire_time="604800"
               bind_request_expire_time="2073600"
               user_expire_time="62208000"
-              rocksdb_batching_threads="16">
+              rocksdb_batching_threads="16"
+              rocksdb_cache_size="42949672960">
+              <configuration:networkParams
+                grpc_process_threads="8"
+                grpc_threads_per_cq="4"
+                grpc_max_sequential_ops="4"/>
+              <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="86400" trace_size_cleanup="104857600" trace_time_cleanup="14400"/>
+            </configuration:userBindServer>
+          </configuration>
+        </service>
+        <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe103">
+          <configuration>
+            <configuration:userBindServer numa_node="0" user_dump_period="28800"
+              user_seen_expire_time="604800"
+              bind_request_expire_time="2073600"
+              user_expire_time="62208000"
+              rocksdb_batching_threads="16"
+              rocksdb_cache_size="0">
               <configuration:networkParams
                 grpc_process_threads="8"
                 grpc_threads_per_cq="4"
@@ -1642,7 +1698,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
             </configuration:campaignManager>
           </configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe200 adfe201 adfe202 adfe203">
+        <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe200 adfe201 adfe203">
           <configuration>
             <configuration:userInfoManager numa_node="1">
               <configuration:networkParams
@@ -1653,7 +1709,31 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               <configuration:threadParams min="100"/>
               <configuration:updateParams update_period="300"/>
               <configuration:profilesCleanupParams life_time="15" temp_life_time="30" clean_time="00:01" clean_user_profiles="false"/>
-              <configuration:matchParams session_timeout="30" repeat_trigger_timeout="60" rocksdb_batching_threads="16"/>
+              <configuration:matchParams
+                session_timeout="30"
+                repeat_trigger_timeout="60"
+                rocksdb_batching_threads="16"
+                rocksdb_cache_size="42949672960"/>
+              <configuration:storage min_free_space="0" max_add_undumped_size="300" max_temp_undumped_size="3072" max_history_undumped_size="2048" max_base_undumped_size="2048" max_freq_cap_undumped_size="3072"/>
+            </configuration:userInfoManager>
+          </configuration>
+        </service>
+        <service descriptor="AdCluster/FrontendSubCluster/UserInfoManager" name="UserInfoManager" host="adfe202">
+          <configuration>
+            <configuration:userInfoManager numa_node="1">
+              <configuration:networkParams
+                grpc_process_threads="10"
+                grpc_threads_per_cq="4"
+                grpc_max_sequential_ops="4"/>
+              <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
+              <configuration:threadParams min="100"/>
+              <configuration:updateParams update_period="300"/>
+              <configuration:profilesCleanupParams life_time="15" temp_life_time="30" clean_time="00:01" clean_user_profiles="false"/>
+              <configuration:matchParams
+                session_timeout="30"
+                repeat_trigger_timeout="60"
+                rocksdb_batching_threads="16"
+                rocksdb_cache_size="0"/>
               <configuration:storage min_free_space="0" max_add_undumped_size="300" max_temp_undumped_size="3072" max_history_undumped_size="2048" max_base_undumped_size="2048" max_freq_cap_undumped_size="3072"/>
             </configuration:userInfoManager>
           </configuration>
@@ -1686,9 +1766,34 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
               <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="10080" trace_size_cleanup="104857600" trace_time_cleanup="10080"/>
             </configuration:channelController></configuration>
         </service>
-        <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe200 adfe201 adfe202 adfe203">
+        <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe200 adfe201 adfe203">
           <configuration>
-            <configuration:userBindServer numa_node="0" user_dump_period="28800" user_seen_expire_time="604800" bind_request_expire_time="2073600" user_expire_time="62208000" rocksdb_batching_threads="16">
+            <configuration:userBindServer
+              numa_node="0"
+              user_dump_period="28800"
+              user_seen_expire_time="604800"
+              bind_request_expire_time="2073600"
+              user_expire_time="62208000"
+              rocksdb_batching_threads="16"
+              rocksdb_cache_size="42949672960">
+              <configuration:networkParams
+                grpc_process_threads="8"
+                grpc_threads_per_cq="4"
+                grpc_max_sequential_ops="4"/>
+              <configuration:logging log_level="7" sys_log="true" rotate_size="100" rotate_time="1440" error_size_cleanup="104857600" error_time_cleanup="86400" trace_size_cleanup="104857600" trace_time_cleanup="14400"/>
+            </configuration:userBindServer>
+          </configuration>
+        </service>
+        <service descriptor="AdCluster/FrontendSubCluster/UserBindServer" name="UserBindServer" host="adfe202">
+          <configuration>
+            <configuration:userBindServer
+              numa_node="0"
+              user_dump_period="28800"
+              user_seen_expire_time="604800"
+              bind_request_expire_time="2073600"
+              user_expire_time="62208000"
+              rocksdb_batching_threads="16"
+              rocksdb_cache_size="0">
               <configuration:networkParams
                 grpc_process_threads="8"
                 grpc_threads_per_cq="4"
@@ -1840,6 +1945,7 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
         <service descriptor="AdCluster/BackendSubCluster/RequestInfoManager" name="RequestInfoManager" host="adbe01 adbe02">
           <configuration>
             <configuration:requestInfoManager
+              rocksdb_cache_size="42949672960"
               rocksdb_batching_threads="16"
               grpc_max_batch_delay_us="3000">
               <configuration:logging
