@@ -47,6 +47,11 @@
           <descriptor:XlsMaxRows>1000</descriptor:XlsMaxRows>
         </descriptor:Birt>
 
+        <descriptor:ClickHouse>
+          <descriptor:URL>jdbc:clickhouse://postdb00:8123/default</descriptor:URL>
+          <descriptor:QueryTimeout>600</descriptor:QueryTimeout>
+        </descriptor:ClickHouse>
+
         <descriptor:Glassfish>
           <descriptor:PermSize>128m</descriptor:PermSize>
           <descriptor:MaxPermSize>512m</descriptor:MaxPermSize>
