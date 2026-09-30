@@ -83,6 +83,16 @@ I8rQTGQs+WU9+mZRNXF4q9jS7PIYlpPLYVawcXownOhzKKZiLy8=
             clickhouse_url="http://postdb00:8123"
             training_period="604800"
             retry_period="300">
+            <segmentPostgres
+              host="postdb00"
+              dbname="stat"
+              user="ads"
+              password="3Azb0uDoR33tPpI"
+              account_id="12240"
+              name_version="1"
+              country_code="RU"
+              language="ru"
+              statement_timeout="3600"/>
             <cudaDevice index="0" memory_limit_mib="10000"/>
             <cudaDevice index="1" memory_limit_mib="10000"/>
             <cudaDevice index="2" memory_limit_mib="10000"/>
