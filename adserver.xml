@@ -1455,7 +1455,11 @@ yDFx8r7i9vIJU5HS3moZLkYWAOilMaV9N56A9Bgb6dNcHkvg3NoaYA==
           <configuration:Cookies domain=".targetrtb.com" path="/">
             <configuration:Cookie name="OPTED_OUT" domain=".targetrtb.com" path="/" expires="157680000"/>
           </configuration:Cookies>
-          <configuration:inventoryStats simplifying="0.2" distrib_count="32"/>
+          <configuration:inventoryStats
+            simplifying="0.2"
+            user_trigger_match_sampling="25"
+            channel_hits_sampling="25"
+            distrib_count="32"/>
           <configuration:userNavigation sampling="25"/>
           <configuration:channelTriggerImpStats enable="false"/>
           <configuration:tagGroupStats enable="false"/>
